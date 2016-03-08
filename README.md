@@ -8,18 +8,18 @@ Framework intégralement  développé from scratch, respectant les concepts de M
 senkei_framework/
   |
   |- app/
+  |  |
   |  |- controllers/
-  |  |  |
   |  |  |- ajax_controllers/
   |  |  |  |- dossier_module/
   |  |  |  |  |- <AjaxControllers>
   |  |  |  |  |
   |  |  |- simple_controllers/
   |  |  |  |- dossier_module/
-  |  |  |  |  |- <controllers>
+  |  |  |  |  |- <Controllers>
   |  |  |  |  |
   |  |  |- special_controllers/
-  |  |  |  |- <controllers>
+  |  |  |  |- <specialControllers>
   |  |  |
   |  |- models/
   |  |  |- <models de données>
@@ -37,6 +37,7 @@ senkei_framework/
   |  |  |- twig/
   |  |  |- yaml/
   |  |  |
+  |  |
   |- configuration/
   |  |- admin/
   |  |  |- <espaces admin et pages respectivement associées>
