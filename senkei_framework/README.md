@@ -125,8 +125,26 @@ Dossier contenant le fichiersde configuration YAML permettant de définir pour c
 |
 ```
 
+=======
 
-- `configuration/admin/` - Dossier contenant un fichier de conf YAML définissant les espaces admin, les pages qui y sont associés, la page de login, et la destination de redirection une fois connecté
+#### 2 - Le dossier database
+
+```sh
+configuration/database/
+```
+
+Dossier contenant un fichier de configuration YAML permettan de définir les paramètres de connexions pour
+différentes bases de données en fonction de l'environnement de dev en cours (dev, text ou prod)
+
+```
+|- configuration/
+|  |- database/
+|  |  |- <config_db>
+|  |
+|
+```
+
+
 
 - `configuration/database/` - Dossier contenant un fichier de conf YAML définissant les paramètres de connexion aux bases de données selon l'environnement de dev
 
