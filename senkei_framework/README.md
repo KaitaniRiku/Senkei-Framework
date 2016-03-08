@@ -12,6 +12,24 @@ app/controllers/
 
 Dossier contenant l'ensemble des controllers, rangés par types de controller, puis par modules.
 
+```
+|- app/
+|  |- controllers/
+|  |  |- ajax_controllers/
+|  |  |  |- dossier_module_ajax1/
+|  |  |  |  |- <AjaxControllers>
+|  |  |  |  |
+|  |  |- simple_controllers/
+|  |  |  |- dossier_module1/
+|  |  |  |  |- <Controllers>
+|  |  |  |  |
+|  |  |  |- dossier_module2/
+|  |  |  |  |- <Controllers>
+|  |  |  |  |
+|  |  |- special_controllers/
+|  |  |  |- <specialControllers>
+|  |  |
+```
 
   ***
 
