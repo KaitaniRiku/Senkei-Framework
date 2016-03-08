@@ -2,8 +2,12 @@
 
 ### App/
 
-```sh
 Dossier contenant les fichiers liées au développement spécifique à l'application
+
+#### 1 - Les controllers
+
+```sh
+app/controllers/
 ```
 
 - `app/controllers/` - Dossier contenant les controllers de chaque page. Chaque controller permet de générer l'affichage d'une page, de lui transmettre ses informations, de lui fournir les données attendues et d'en assurer l'aspect fonctionnel.
