@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    	<title>{{ page_infos.page_title }}</title>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="www/assets/favicon/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="www/assets/favicon/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="www/assets/favicon/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="www/assets/favicon/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="www/assets/favicon/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="www/assets/favicon/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="www/assets/favicon/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="www/assets/favicon/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="www/assets/favicon/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="www/assets/favicon/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="www/assets/favicon/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="www/assets/favicon/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="www/assets/favicon/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="www/assets/favicon/manifest.json">
+        <!-- <link rel="mask-icon" href="www/assets/favicon/safari-pinned-tab.svg" color="#5bbad5"> -->
+        <link rel="shortcut icon" href="www/assets/favicon/favicon.ico">
+
+    	<!-- Chargement des fichiers CSS de bootstrap (si souhaité dans la config) -->
+    	{% if bootstrap_files.use  %}
+    		<link rel="stylesheet" type="text/css" href="www/assets/bootstrap/css/{{ bootstrap_files.files.css }}">
+    	{% endif %}
+    	<!-- Chargement des fichiers CSS de la page courante (défini dans la config) -->
+    	{% for key, value in stylesheet %}
+        	<link rel="stylesheet" type="text/css" href="www/assets/css/{{ value }}">
+    	{% endfor %}
+    	<!-- Chargement des fichiers CSS (issue de la compilation par less) de la page courante (défini dans la config) -->
+    	{% for key, value in less_files %}
+        	<link rel="stylesheet" type="text/css" href="www/assets/css/{{ value }}">
+    	{% endfor %}
+    </head>
+
+    <body style="background-color: #000;">
+        <div id='top'></div>
+
+        <!-- Google Tag Manager -->
+            <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KZB96S"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KZB96S');</script>
+        <!-- End Google Tag Manager -->
+
+
+        <div class="site-container">
+            {% include page_view %}
+        </div>
+
+
+    	<script type="text/javascript" src="www/assets/js/jquery-1.11.3.min.js"></script>
+    	<!-- Chargement des fichiers JS de la page courante (défini dans la config) -->
+    	{% for key, value in js_files %}
+    	<script type="text/javascript" src="www/assets/js/{{ value }}"></script>
+    	{% endfor %}
+    	<!-- Chargement des fichiers JS de bootstrap (si souhaité dans la config) -->
+    	{% if bootstrap_files.use %}
+    	<script src="www/assets/bootstrap/js/{{ bootstrap_files.files.js }}"></script>
+    	{% endif %}
+
+        {% if debug_tool %}
+		<div id="debug_tool">
+			<div id="debug_tool_title">
+                <h3>DEBUG TOOL</h3>
+			</div>
+			<div id="debug_tool_core">
+				<div id="debug_tool_core_container">
+
+					<!-- Boutons d'affichage des dump des variables super globales -->
+					<h3>Variables super globales</h3>
+					<div class="separator"></div>
+					<div id="btn_debug_container">
+						{% for key, value in debug_global_vars %}
+							<a href="#top"><button class="btn_debug" modal="dump_{{ key }}">{{ key }}</button></a>
+						{% endfor %}
+					</div>
+					<!-- Modals contenants les dump respectifs de chaque variable super globales -->
+					{% for key, value in debug_global_vars %}
+					<div class="debug_item" id="dump_{{ key }}">
+						<button class="btn_close_modal">X</button>
+						<div class="debug_item_content">
+							$_{{ key }}<br/><br/>
+							<pre>{{ dump(value) }}</pre>
+						</div>
+					</div>
+					{% endfor %}
+
+					<br/><br/>
+
+					<!-- Boutons d'affichage des dump des fichiers chargés pour la page actuelle -->
+                    <h3>Fichiers (css, js, bootstrap, knacss) chargés</h3>
+                    <div class="separator"></div>
+                    <div id="btn_debug_container">
+                        {% for key, value in debug_loaded_files %}
+                            <a href="#top"><button class="btn_debug" modal="dump_{{ key }}">{{ key }}</button></a>
+                        {% endfor %}
+                    </div>
+                    <!-- Modals contenants les dump respectifs de chaque type de fichier chargé -->
+                    {% for key, value in debug_loaded_files %}
+                    <div class="debug_item" id="dump_{{ key }}">
+                        <button class="btn_close_modal">X</button>
+                        <div class="debug_item_content">
+                            $_{{ key }}<br/><br/>
+                            <pre>{{ dump(value) }}</pre>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <br/><br/>
+
+					<!-- Boutons d'affichage des dump des variables de la page -->
+					<h3>Variables de la page</h3>
+					<div class="separator"></div>
+					<div id="btn_debug_container">
+						{% for key, value in controller_vars %}
+							<a href="#top"><button class="btn_debug" modal="dump_{{ key }}">{{ key }}</button></a>
+						{% endfor %}
+					</div>
+					<!-- Modals contenants les dump respectifs de chaque variable de la page -->
+					{% for key, value in controller_vars %}
+					<div class="debug_item" id="dump_{{ key }}">
+						<button class="btn_close_modal">X</button>
+						<div class="debug_item_content">
+							${{ key }}<br/><br/>
+							<pre>{{ dump(value) }}</pre>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<div id="modal_container"></div>
+			</div>
+		</div>
+	{% endif %}
+
+
+    </body>
+</html>

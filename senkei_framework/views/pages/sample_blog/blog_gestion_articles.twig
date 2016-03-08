@@ -1,0 +1,82 @@
+{% import "macros/paginate.twig" as paginate %}
+{% import "macros/bootstrapNotif.twig" as notification %}
+
+<div class="space"></div>
+
+<h1>Gérer les Articles du blog ({{ controller_vars.nb_articles }})</h1>
+
+<hr/>
+
+{% if session.flash %}
+	{{ notification.notif(session.flash.type, session.flash.message) }}
+{% endif %}
+
+{% if controller_vars.nb_articles > 0 %}
+
+	<table class="table table-striped table-bordered">
+		<tr>
+			<th></th>
+			<th>Title</th>
+			<th>Categories</th>
+			<th>Date</th>
+			<th>Author</th>
+			<th>Activated</th>
+			<th>Change status</th>
+			<th>Update</th>
+			<th>Delete</th>
+		</tr>
+		{% for key, value in controller_vars.articles %}
+			<tr>
+				<td><img width="40" src="www/assets/pictures/sample_blog/{{ value.img }}" alt="" /></td>
+			    <td>{{ value.title }}</td>
+				<td>
+					<ul>
+						{% for k, v in value.categories %}
+							<li style="list-style-position:inside;">{{ v.category_name }}</li>
+						{% endfor %}
+					</ul>
+				</td>
+			    <td>{{ value.date_|date("F\\, d Y") }}</td>
+			    <td>{{ value.author }}</td>
+			    <td>
+			    	{% if value.status == 1 %}
+			    		<span class="text-success glyphicon glyphicon-ok" aria-hidden="true"></span>
+			    	{% else %}
+			    		<span class="text-danger glyphicon glyphicon-remove" aria-hidden="true"></span>
+			    	{% endif %}
+			    </td>
+			    <td>
+			    	{% if value.status == 1 %}
+			    		<a class="text-danger" href="index.php?p=blog_gestion_articles&amp;article_id={{ value.id }}&amp;status=0">Disable</a>
+			    	{% else %}
+			    		<a class="text-success" href="index.php?p=blog_gestion_articles&amp;article_id={{ value.id }}&amp;status=1">Activate</a>
+			    	{% endif %}
+			    </td>
+			    <td>
+			    	<a href="index.php?p=blog_add_article&amp;modif_article={{ value.id }}">
+			    		<span class="text-primary glyphicon glyphicon-edit" aria-hidden="true"></span>
+			    	</a>
+			    </td>
+			    <td>
+			    	<a  onclick=' return confirm("Etes-vous sûr de vouloir supprimer cet article?");' href="index.php?p=blog_gestion_articles&amp;suppr_article={{ value.id }}">
+			    		<span class="text-danger glyphicon glyphicon-trash" aria-hidden="true"></span>
+			    	</a>
+			    </td>
+		    <tr/>
+
+		{% endfor %}
+
+	</table>
+
+	<br/>
+
+	<p class="text-center"> Page(s):
+
+		{{ paginate.pagination(controller_vars.nb_pages, controller_vars.current_page, "index.php?p=blog_gestion_articles&page=") }}
+
+	</p>
+{% else %}
+
+	Aucun article dans le blog
+
+{% endif %}

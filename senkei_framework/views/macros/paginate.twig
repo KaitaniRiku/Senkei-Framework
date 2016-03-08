@@ -1,0 +1,12 @@
+{# Macro pour l'affichage d'une pagination avec bootstrap #}
+{% macro pagination(nb_pages, current_page, link) %}
+    {% for i in 1..nb_pages %}
+
+        {% if (i == current_page) %}
+            <button class="btn btn-default" type="button" name="button">{{ i }}</button>
+        {% else %}
+            <a class="btn btn-warning" href="{{link}}{{ i }}">{{ i }}</a>
+        {% endif %}
+
+    {% endfor %}
+{% endmacro %}

@@ -1,0 +1,30 @@
+{% import "macros/bootstrapForm.twig" as form %}
+{% import "macros/bootstrapNotif.twig" as notification %}
+<div class='container'>
+	<br/>
+	<p style="color:#BB0B0B;">
+		<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+		<a href="index.php?p=blog">Retour sur le site</a>
+	</p>
+	<div style="height:50px"></div>
+	<div class="row">
+		<div class="col-sm-4 col-md-offset-4">
+			<h2 style="font-size:32px; color: #eee;" class="text-center">Connexion</h2>
+			<hr/>
+			{% if session.flash %}
+				{{ notification.notif(session.flash.type, session.flash.message) }}
+			{% endif %}
+			<!-- formTag(id, action = "#", method = "POST") -->
+			{{ form.formTag('form_login') }}
+
+			    <!-- inputText(name, label, placeholder, value, class = "default_class") -->
+			    {{ form.inputText('mail', '', 'Entrez votre e-mail', '', 'control-empty control-mail') }}
+
+			    <!-- inputPassword(name, label, placeholder, value, class = "default_class") -->
+			    {{ form.inputPassword('password', '', 'Entrez votre mot de passe', '', 'control-empty') }}
+
+			    <p class="text-center"><button name="connect" type="submit" class="btn btn-default">Submit</button></p>
+			</form>
+		</div>
+	</div>
+</div>

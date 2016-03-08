@@ -1,0 +1,54 @@
+{% import "macros/bootstrapForm.twig" as form %}
+{% import "macros/bootstrapNotif.twig" as notification %}
+<div class="space"></div>
+{% if get.modif_article %}
+	<p>
+		<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+		<a href="index.php?p=blog_gestion_articles">Retour à la gestion des articles</a>
+	</p>
+	<br/>
+{% endif %}
+<h1>{{ controller_vars.titre_module }}</h1>
+<hr/>
+
+{% if session.flash %}
+	{{ notification.notif(session.flash.type, session.flash.message) }}
+{% endif %}
+
+<!-- formTag(id, action = "#", method = "POST") -->
+{{ form.formTag('form_add_article') }}
+
+    <!-- inputFile(name, label, required, class = "default_class") -->
+
+    {{ form.inputFile("photo", "Phote de l'article", get.modif_article ? false : true, 'photo_article') }}
+	{% if controller_vars.article.img|length < 1 %}
+		<img id="apercu" src="www/assets/pictures/blank/no-image-featured-image.png" alt="your image" />
+	{% else %}
+		<img id="apercu" src="www/assets/pictures/sample_blog/{{ controller_vars.article.img }}" alt="your image" />
+	{% endif %}
+
+    <!-- inputText(name, label, placeholder, value, class = "default_class") -->
+    {{ form.inputText('title', 'Titre', 'Entrez le titre de l\'article', controller_vars.article.title, 'control-empty') }}
+
+    <!-- inputTextarea(name, label, value, class = "default_class") -->
+    {{ form.inputTextarea('content', 'Contenu de l\'article', controller_vars.article.content, 'control-empty', 10) }}
+
+	{% set arrayCateg = [] %}
+	{% for k, v in controller_vars.article.categories %}
+		{% set arrayCateg = arrayCateg | merge([v.category_id]) %}
+	{% endfor %}
+
+	{% for key, value in controller_vars.categories %}
+		{% if value.category_id in arrayCateg %}
+			{% set checked = 'checked' %}
+		{% else %}
+			{% set checked = '' %}
+		{% endif %}
+		{{ form.inputCheckbox('categories', value.category_name, value.category_id, checked) }}
+	{% endfor %}
+
+
+
+    <button type="submit" name="{{ controller_vars.submit }}" class="btn btn-default">Submit</button>
+
+</form>

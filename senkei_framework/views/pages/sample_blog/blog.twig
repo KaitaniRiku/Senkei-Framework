@@ -1,0 +1,85 @@
+{% import "macros/paginate.twig" as paginate %}
+
+
+<br/>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3">
+            <!-- formTag(id, action = "#", method = "POST") -->
+            {{ form.formTagInline('form_add_article') }}
+                <!-- inputText(name, label, placeholder, value, class = "default_class") -->
+                {{ form.inputTextInline('q', 'Rechercher', controller_vars.article.title, 'control-empty') }}
+
+                <button type="submit" name="search" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span></button>
+            </form>
+            <hr/>
+            {% if post.q %}
+                {% if controller_vars.nb_articles > 0 %}
+                    <h4 class="text-success">{{ controller_vars.nb_articles }} résultats pour: "{{ post.q }}"</h4>
+                {% else %}
+                    <h4 class="text-danger">Aucun résultat pour: "{{post.q}}"</h4>
+                {% endif %}
+
+                <hr/>
+            {% elseif get.category_id %}
+                <h3><span class="text-primary">#{{ controller_vars.category_name }}</span></h3>
+                <div>Actuellement affiché</div>
+                <hr/>
+            {% endif %}
+            {% for key, value in controller_vars.categories %}
+                <a class="text-warning" href="index.php?p=blog&amp;category_id={{ value.category_id }}">
+                    #{{ value.category_name }}
+                </a><br/>
+            {% endfor %}
+            <hr/>
+            <a class="cloud_tags" href="index.php?p=blog">#Tous les articles</a>
+            <hr/>
+            {% if not get.category_id and not post.q %}
+                <div class="">
+                    {{ paginate.pagination(controller_vars.nb_pages, controller_vars.current_page, 'index.php?p=blog&page=') }}
+                </div>
+            {% endif %}
+            <br/>
+        </div>
+        <div class="col-sm-8 col-sm-offset-1">
+            {% for key, value in controller_vars.articles %}
+                <div class="row article_wrapper">
+                    <div class="col-md-12">
+                        <h3 class="text-primary">
+                            <a href="index.php?p=blog_article&amp;article_id={{ value.id }}">{{ value.title }}</a>
+                        </h3>
+                        <div>
+                            <span class="text-inverse">{{ value.date_|date('F jS \\a\\t g:ia') }}</span>
+                            <span class="text-primary">by {{ value.author }}</span>
+                        </div>
+                        <hr/>
+                        <div>
+                            {% for k, v in value.categories %}
+                                #<a class="categories_tags" href="index.php?p=blog&amp;category_id={{ v.category_id }}">{{ v.category_name }}</a>
+                            {% endfor %}
+                        </div>
+                        <hr/>
+                        <div class="article_img_wrapper">
+                            <a href="index.php?p=blog_article&amp;article_id={{ value.id }}" class="btn-link">
+                                <img class="article_img" src="www/assets/pictures/sample_blog/{{ value.img }}" alt="" />
+                            </a>
+                        </div>
+                        <div class="text-muted">
+                            {{ value.content|truncate(300, true) }}
+                        </div>
+                        <br/>
+                        <p>
+                            <a href="index.php?p=blog_article&amp;article_id={{ value.id }}" class="btn btn-warning">Lire la suite</a>
+                        </p>
+                    </div>
+                    <div class="col-md-12">
+                        <hr/>
+                    </div>
+                </div>
+                <br/>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>

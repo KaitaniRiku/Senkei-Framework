@@ -1,0 +1,37 @@
+{% import "macros/bootstrapNotif.twig" as notification %}
+<br>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        {% if session.flash %}
+            {{ notification.notif(session.flash.type, session.flash.message) }}
+        {% endif %}
+
+        <h2 class="text-danger">Register</h2>
+
+        <hr/>
+
+        {{ form.formTag('form_add_article') }}
+            <!-- inputFile(name, label, required, class = "default_class") -->
+            {{ form.inputFile("photo", "Phote de profil", get.modif_article ? false : true, 'photo_article') }}
+        	{% if controller_vars.article.img|length < 1 %}
+        		<img id="apercu" src="www/assets/pictures/blank/no-image-featured-image.png" alt="your image" />
+        	{% else %}
+        		<img id="apercu" src="www/assets/pictures/sample_blog/{{ controller_vars.article.img }}" alt="your image" />
+        	{% endif %}
+
+            <br/><br/>
+
+            <!-- inputText(name, label, placeholder, value, class = "default_class") -->
+            {{ form.inputText('pseudo', 'Pseudo', 'Entrez votre pseudo', post.mail ? post.pseudo : '', 'control-empty') }}
+
+            <!-- inputText(name, label, placeholder, value, class = "default_class") -->
+            {{ form.inputPassword('password', 'Password', 'Entrez votre mot de passe', post.mail ? post.password : '', 'control-empty') }}
+
+            <!-- inputText(name, label, placeholder, value, class = "default_class") -->
+            {{ form.inputText('mail', 'Email', 'Entrez le titre de l\'article', post.mail ? post.mail : '', 'control-empty control-mail') }}
+
+            <button type="submit" name="signup" class="btn btn-danger">Sign Up</button>
+
+        </form>
+    </div>
+</div>

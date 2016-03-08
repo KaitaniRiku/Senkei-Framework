@@ -1,0 +1,34 @@
+##
+# Configuration des templates twig
+#
+# Ce fichier de configuration de définir pour chaque template/layout, la liste des pages qui y sont associés
+##
+
+Sample_blog_admin:
+    # On indique le nom du template twig
+	template: layout_sample_blog_admin.twig
+    # On liste les pages qui lui sont ssociées
+	pages:
+		- blog_add_article
+		- blog_gestion_articles
+
+Sample_blog_login:
+	template: layout_sample_blog_login.twig
+	pages:
+		- blog_login
+
+Sample_blog:
+    template: layout_sample_blog.twig
+    pages:
+        - blog
+        - blog_article
+        - blog_signup
+        - blog_signin
+
+Guide:
+    template: layout_guide.twig
+    pages:
+        - presentation
+
+Default:
+	template: layout.twig

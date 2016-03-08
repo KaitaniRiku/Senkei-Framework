@@ -1,0 +1,39 @@
+##
+# Configuration des dépendances de fichier CSS
+#
+# Ce fichier de configuration permet de savoir:
+# - Quels fichiers CSS charger pour chaque page
+# - Et quels fichiers CSS charger pour toutes les pages
+##
+
+use:
+    # On indique si on souhaite lier automatiquement le fichier CSS au layout twig correspondant: true ou false
+    link_files: true
+
+# On indique pour chaque page, les fichiers JS que l'on souhaite utiliser à partir du dossier www/assets/js/
+files:
+    # On liste les fichiers css que l'on souhaite appliquer à toutes les pages
+    all:
+        #- reset.css
+        - debug_tool.css
+        - upload.css
+
+    # On liste les fichiers CSS que l'on souhaite appliquer à une page spécifique
+    # Pour cela on écrit le nom de la page, puis on liste les fichiers CSS à charger
+    blog_add_article:
+        - sample_blog_admin.css
+
+    blog_gestion_articles:
+        - sample_blog_admin.css
+
+    blog:
+        - sample_blog.css
+
+    blog_article:
+        - sample_blog.css
+
+    blog_signup:
+        - sample_blog.css
+
+    blog_signin:
+        - sample_blog.css

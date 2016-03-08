@@ -1,0 +1,24 @@
+##
+# Paramètres de connection aux bases de données, en fonction de l'environnement de developpement
+##
+
+# Paramètres de connexion en environnement de DEV
+dev:
+    db_name: vacherot
+    db_host: dev.etudiant-eemi.com
+    db_user: vacherot
+    db_pass: 882077
+
+# Paramètres de connexion en environnement de TEST
+test:
+    db_name: vacherot
+    db_host: dev.etudiant-eemi.com
+    db_user: vacherot
+    db_pass: 882077
+
+# Paramètres de connexion en environnement de PROD
+prod:
+    db_name: vacherot
+    db_host: dev.etudiant-eemi.com
+    db_user: vacherot
+    db_pass: 882077

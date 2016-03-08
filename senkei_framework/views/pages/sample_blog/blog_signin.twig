@@ -1,0 +1,24 @@
+{% import "macros/bootstrapNotif.twig" as notification %}
+<br>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        {% if session.flash %}
+            {{ notification.notif(session.flash.type, session.flash.message) }}
+        {% endif %}
+
+        <h2 class="text-danger">Sign In</h2>
+
+        <hr/>
+
+        {{ form.formTag('form_add_article') }}
+            <!-- inputText(name, label, placeholder, value, class = "default_class") -->
+            {{ form.inputText('pseudo', 'Pseudo', 'Entrez votre pseudo', post.mail ? post.pseudo : '', 'control-empty') }}
+
+            <!-- inputText(name, label, placeholder, value, class = "default_class") -->
+            {{ form.inputPassword('password', 'Password', 'Entrez votre mot de passe', post.mail ? post.password : '', 'control-empty') }}
+
+            <button type="submit" name="signin" class="btn btn-danger">Sign Up</button>
+
+        </form>
+    </div>
+</div>

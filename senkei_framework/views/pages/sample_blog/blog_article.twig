@@ -1,0 +1,89 @@
+{% import "macros/bootstrapNotif.twig" as notification %}
+<div class="container">
+    <span class="glyphicon glyphicon-arrow-left"></span>
+    <a href="index.php?p=blog">Retour au blog</a>
+</div>
+
+<hr/>
+
+{% if controller_vars.article.id %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <h3 class="text-primary ">{{ controller_vars.article.title }}</h3>
+            <div>
+                <span class="text-muted">{{ controller_vars.article.date_|date('F jS \\a\\t g:ia') }}</span>
+                <span class="text-primary">by {{ controller_vars.article.author }}</span>
+            </div>
+            <hr/>
+            <div>
+                {% for k, v in controller_vars.article.categories %}
+                    #<a class="categories_tags" href="index.php?p=blog&amp;category_id={{ v.category_id }}">{{ v.category_name }}</a>
+                {% endfor %}
+            </div>
+            <hr/>
+            <div class="article_img_wrapper">
+                <img class="article_img" src="www/assets/pictures/sample_blog/{{ controller_vars.article.img }}" alt="" />
+            </div>
+            <div class="text-muted">
+                {{ controller_vars.article.content }}
+            </div>
+            <br/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <hr/>
+            {% if not controller_vars.comments|length > 0 %}
+                <br/>
+                <p class="text-primary">Aucun commentaire pour cet article</p>
+            {% else %}
+                <h3 class="text-danger">Commentaires ({{ controller_vars.comments|length }})</h3>
+                <br/>
+                {% for key, value in controller_vars.comments %}
+                    <div class="row comment_wrapper">
+                        <div class="col-sm-1">
+                            <img class="user_comment_img" src="www/assets/pictures/sample_blog/{{ value.user_img }}" alt="" />
+                        </div>
+                        <div class="col-sm-11">
+                            <p>
+                                <span class="text-danger">{{ value.date_|date('F jS \\a\\t g:ia') }}</span>
+                                <span class="text-primary">by {{ value.pseudo }}</span>
+                            </p>
+                            <p>{{ value.comment }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        {% if session.user %}
+            <div class="col-md-8 col-md-offset-2">
+                <br/>
+                {% if session.flash %}
+                    {{ notification.notif(session.flash.type, session.flash.message) }}
+                {% endif %}
+                <!-- formTag(id, action = "#", method = "POST") -->
+                {{ form.formTag('form_add_comment') }}
+                    <!-- inputTextarea(comment, label, value, class = "default_class") -->
+                    {{ form.inputTextarea('comment', 'Commentez', '', 'control-empty', 5) }}
+                    <button type="submit" name="commenter" class="col-md-12 btn btn-danger">Commenter</button>
+                </form>
+            </div>
+        {% else %}
+            <div class="col-md-8 col-md-offset-2">
+                <hr/>
+                <p>Pour commenter cet article,
+                    <a class="text-danger" href="index.php?p=blog_signin&amp;redirect=true">connectez-vous</a> ou
+                    <a class="text-danger" href="index.php?p=blog_signup">inscrivez-vous
+                </p>
+            </div>
+        {% endif %}
+    </div>
+
+</div>
+{% else %}
+    <br/>
+    <h2 class="text-center text-danger">Aucun article correspondant</h2>
+
+{% endif %}
