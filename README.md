@@ -6,18 +6,24 @@ Framework intégralement  développé from scratch, respectant les concepts de M
 
 ```
 senkei_framework/
+  |
   |- app/
   |  |- controllers/
+  |  |
   |  |  |- ajax_controllers/
   |  |  |  |- dossier_module/
   |  |  |  |  |- <AjaxControllers>
+  |  |  |  |  |
   |  |  |- simple_controllers/
   |  |  |  |- dossier_module/
   |  |  |  |  |- <controllers>
+  |  |  |  |  |
   |  |  |- special_controllers/
   |  |  |  |- <controllers>
+  |  |
   |  |- models/
   |  |  |- <models de données>
+  |  |
   |  |- services/
   |  |  |- <Hash>
   |  |  |- <Paginate>
@@ -25,10 +31,12 @@ senkei_framework/
   |  |  |- <Session>
   |  |  |- <UploadFile>
   |  |  |- <Validator>
+  |  |
   |  |- vendors/
   |  |  |- less/
   |  |  |- twig/
   |  |  |- yaml/
+  |
   |- configuration/
   |  |- admin/
   |  |  |- <espaces admin et pages respectivement associées>
