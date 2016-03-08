@@ -1,4 +1,4 @@
-# Senkei Framework v-1.0.0
+# Senkei Framework v 1.0.0
 
 Framework intégralement  développé from scratch, respectant les concepts de Model View Controller, et de Programmation Orientée Objet.
 
