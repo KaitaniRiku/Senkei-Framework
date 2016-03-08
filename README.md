@@ -8,7 +8,6 @@ Framework intégralement  développé from scratch, respectant les concepts de M
 senkei_framework/
   |
   |- app/
-  |  |
   |  |- controllers/
   |  |  |- ajax_controllers/
   |  |  |  |- dossier_module/
