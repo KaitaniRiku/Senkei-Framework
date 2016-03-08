@@ -5,7 +5,7 @@ Framework intégralement  développé from scratch, respectant les concepts de M
 ### Arborescence de l'architecture
 
 ```
-api-v1/
+senkei_framework/
   |- app/
   |  |- controllers/
   |  |  |- <Classes définissant l'affichage d'une page, ses données et permettant de gérér son aspect fonctionnel>
