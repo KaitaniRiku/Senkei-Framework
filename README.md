@@ -37,49 +37,74 @@ senkei_framework/
   |  |  |- yaml/
   |  |  |
   |  |
+  |
   |- configuration/
   |  |- admin/
-  |  |  |- <espaces admin et pages respectivement associées>
+  |  |  |- <pages>
+  |  |  |
   |  |- database/
-  |  |  |- <fichiers de configuration pour accès bdd selon environnement de dev>
+  |  |  |- <config_db>
+  |  |  |
   |  |- design files/
-  |  |  |- <fichiers permettant de gérer les dépendances pour fichiers css, js, less, bootstrap en fonction des pages>
   |  |  |- <config_bootstrap>
+  |  |  |- <config_knacss>
   |  |  |- <config_jsfile>
   |  |  |- <config_less>
   |  |  |- <config_stylesheet>
+  |  |  |
   |  |- environnement/
-  |  |  |- <definition environnment de dev>
+  |  |  |- <config_environment>
+  |  |  |
+  |  |- routes/
+  |  |  |- <config_routes>
+  |  |  |
   |  |- twig/
   |  |  |- <config_templates>
   |  |  |- <config_twig>
+  |  |
+  |
   |- core/
   |  |- database/
-  |  |  |- <Database - fichier de connexion à la base de données>
-  |  |  |- <Models - query builders utilisés par les fichiers models>
+  |  |  |- <Database>
+  |  |  |- <ModelsProvider>
+  |  |  |
   |  |- system/
-  |  |  |- <fichiers permettant le fonctionnement du Model Controller>
-  |  |  |- <AbstractPageSystem>
-  |  |  |- <PageSystem>
+  |  |  |- <ControllersProviderSystem>
+  |  |  |- <RoutageSystem>
   |  |  |- <System>
-  |  |- Autoloader
-  |  |- Configuration
+  |  |  |
+  |  |- system_services/
+  |  |  |- <AdminSystem>
+  |  |  |- <EnvironmentSystem>
+  |  |  |- <FilesDependancySystem>
+  |  |  |- <LangSystem>
+  |  |  |- <TwigSystem>
+  |  |  |
+  |  |- <Autoloader>
+  |  |- <Configuration>
+  |  |
+  |
   |- lang/
-  |  |- en/
-  |  |  |- <fichier clés de langue en anglais>
-  |  |- fr/
-  |  |  |- <fichier clés de langue en français>
+  |  |- <en>
+  |  |- <fr>
+  |
   |- templates/
   |  |- mail_tempaltes/
-  |  |  |- <fichiers de templates mail>
+  |  |  |- <mail_confirmation_inscription>
+  |  |
+  |
   |- views/
   |  |- macros/
-  |  |  |- <fichiers contenant les macros twig>
   |  |  |- <bootstrapForm>
-  |  |  |- <form>
+  |  |  |- <bootstrapNotif>
+  |  |  |- <paginate>
+  |  |  |
   |  |- pages/
-  |  |  |- <pages du site>
+  |  |  |- dossier_module
+  |  |  |  |- <pages>
+  |  |  |
   |  |- <fichiers layout>
+  |
   |- www/
   |  |- ajax/
   |  |  |- <index ajax>
@@ -90,6 +115,8 @@ senkei_framework/
   |  |  |- js/
   |  |  |- less/
   |  |  |- pictures/
+  |  |
+  |
   |- index
 ```
 
