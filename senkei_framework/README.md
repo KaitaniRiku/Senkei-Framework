@@ -4,7 +4,7 @@
 
 Dossier contenant les fichiers liées au développement spécifique à l'application
 
-#### 1 - Les controllers
+#### 1 - Le dossier controllers
 
 ```sh
 app/controllers/
