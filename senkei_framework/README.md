@@ -1,4 +1,4 @@
-# Description des "main directories" du framework
+# Description des dossiers
 
 #### App/
 
