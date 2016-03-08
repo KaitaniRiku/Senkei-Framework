@@ -29,6 +29,21 @@ Dossier contenant l'ensemble des controllers, rangés par types de controller, p
 |  |  |
 ```
 
+#### 1 - Le dossier models
+
+```sh
+app/models/
+```
+
+Dossier contenant l'ensemble des class models de données
+
+```
+|- app/
+|  |- models/
+|  |  |- <models1>
+|  |  |- <models2>
+```
+
   ***
 
 - `app/models/` - Dossier class contenant les models de données, rangés par modules.
