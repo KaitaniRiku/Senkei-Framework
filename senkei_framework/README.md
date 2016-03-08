@@ -103,9 +103,26 @@ Dossier contenant les composants/librairies venant de l'extérieur
 
 =======
 
+#### 1 - Le dossier admin
+
 ```sh
-Dossier contenant les fichiers de configuration de l'architecture
+configuration/admin/
 ```
+
+Dossier contenant le fichiers de configuration YAML définissant:
+- Les espaces utilisateurs et les espaces d'administration
+- les pages protégées, non-accessible sans connexion
+- les pages non-accessible lors de la connexion
+- les pages de destination de redirection dans tous les cas de figures
+
+```
+|- configuration/
+|  |- admin/
+|  |  |- <pages>
+|  |
+|
+```
+
 
 - `configuration/admin/` - Dossier contenant un fichier de conf YAML définissant les espaces admin, les pages qui y sont associés, la page de login, et la destination de redirection une fois connecté
 
