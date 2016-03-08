@@ -96,7 +96,7 @@ Dossier contenant les composants/librairies venant de l'extérieur
 ```
 
 
-=======
+
 ***
 =======
 
@@ -229,7 +229,7 @@ Dossier contenant les fichiers de configuration YAML permettant:
 ```
 
 
-=======
+
 ***
 =======
 
