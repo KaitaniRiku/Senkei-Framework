@@ -9,7 +9,7 @@ senkei_framework/
   |
   |- app/
   |  |- controllers/
-  |  |
+  |  |  |
   |  |  |- ajax_controllers/
   |  |  |  |- dossier_module/
   |  |  |  |  |- <AjaxControllers>
@@ -20,10 +20,10 @@ senkei_framework/
   |  |  |  |  |
   |  |  |- special_controllers/
   |  |  |  |- <controllers>
-  |  |
+  |  |  |
   |  |- models/
   |  |  |- <models de données>
-  |  |
+  |  |  |
   |  |- services/
   |  |  |- <Hash>
   |  |  |- <Paginate>
@@ -31,12 +31,12 @@ senkei_framework/
   |  |  |- <Session>
   |  |  |- <UploadFile>
   |  |  |- <Validator>
-  |  |
+  |  |  |
   |  |- vendors/
   |  |  |- less/
   |  |  |- twig/
   |  |  |- yaml/
-  |
+  |  |  |
   |- configuration/
   |  |- admin/
   |  |  |- <espaces admin et pages respectivement associées>
