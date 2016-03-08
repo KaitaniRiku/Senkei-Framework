@@ -10,11 +10,13 @@ senkei_framework/
   |- app/
   |  |- controllers/
   |  |  |- ajax_controllers/
-  |  |  |  |- dossier_module/
+  |  |  |  |- dossier_module_ajax1/
   |  |  |  |  |- <AjaxControllers>
   |  |  |  |  |
   |  |  |- simple_controllers/
   |  |  |  |- dossier_module/
+  |  |  |  |  |- <Controllers>
+  |  |  |  |- dossier_module2/
   |  |  |  |  |- <Controllers>
   |  |  |  |  |
   |  |  |- special_controllers/
@@ -100,7 +102,9 @@ senkei_framework/
   |  |  |- <paginate>
   |  |  |
   |  |- pages/
-  |  |  |- dossier_module
+  |  |  |- dossier_module/
+  |  |  |  |- <pages>
+  |  |  |- dossier_module2/
   |  |  |  |- <pages>
   |  |  |
   |  |- <fichiers layout>
