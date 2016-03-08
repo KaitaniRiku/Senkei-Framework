@@ -10,7 +10,7 @@ Dossier contenant les fichiers liées au développement spécifique à l'applica
 app/controllers/
 ```
 
-- `app/controllers/` - Dossier contenant les controllers de chaque page. Chaque controller permet de générer l'affichage d'une page, de lui transmettre ses informations, de lui fournir les données attendues et d'en assurer l'aspect fonctionnel.
+Dossier contenant l'ensemble des controllers, rangés par types de controller, puis par modules.
 
 
   ***
