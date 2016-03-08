@@ -14,8 +14,9 @@ senkei_framework/
   |  |  |  |  |- <AjaxControllers>
   |  |  |  |  |
   |  |  |- simple_controllers/
-  |  |  |  |- dossier_module/
+  |  |  |  |- dossier_module1/
   |  |  |  |  |- <Controllers>
+  |  |  |  |  |
   |  |  |  |- dossier_module2/
   |  |  |  |  |- <Controllers>
   |  |  |  |  |
