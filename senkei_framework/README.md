@@ -97,7 +97,9 @@ Dossier contenant les composants/librairies venant de l'extérieur
 
 
 =======
+***
 =======
+
 
 ### Configuration/
 
@@ -226,7 +228,11 @@ Dossier contenant les fichiers de configuration YAML permettant:
 |
 ```
 
+
 =======
+***
+=======
+
 
 ### Core/
 
