@@ -109,11 +109,13 @@ Dossier contenant les composants/librairies venant de l'extérieur
 configuration/admin/
 ```
 
-Dossier contenant le fichiers de configuration YAML définissant:
-- Les espaces utilisateurs et les espaces d'administration
-- les pages protégées, non-accessible sans connexion
-- les pages non-accessible lors de la connexion
-- les pages de destination de redirection dans tous les cas de figures
+Dossier contenant le fichiersde configuration YAML permettant de définir pour chaque espaces "privés":
+- Les pages protégées, non-accessible sans connexion
+- Les pages non-accessible lors de la connexion
+- Les pages de redirection pour chaque cas:
+    - user non connecté et tente d'acceder à une page protégée
+    - user non connecté et tente d'acceder à une page innaccessible s'il est connecté
+    - user se deconnecte
 
 ```
 |- configuration/
