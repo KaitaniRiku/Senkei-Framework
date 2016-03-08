@@ -2,7 +2,7 @@
 
 Framework intégralement  développé from scratch, respectant les concepts de Model View Controller, et de Programmation Orientée Objet.
 
-### Arborescence de l'architecture
+### Structure de dossier
 
 ```
 senkei_framework/
