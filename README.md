@@ -1,8 +1,6 @@
-# framework - v1
+# Senkei Framework v-1.0.0
 
-***
-
-Architecture développée from scratch version 1, respectant les principes de model view controller, et de la programmation orientée objet.
+Architecture intégralement  développée from scratch, respectant les principes de Model View Controller, et de la programmation orientée objet.
 
 
 

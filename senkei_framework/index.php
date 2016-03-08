@@ -4,7 +4,7 @@
  *
  * Nom du Framework: SENKEI
  *
- * Description: Framework intégralement développé from scratch,
+ * Description: Framework intégralement développée from scratch,
  * respectant les principes du Model View Controller et de la Programmation Orientée Objet.
  *
  * @author Kevin Vacherot <kevinvacherot@gmail.com>
