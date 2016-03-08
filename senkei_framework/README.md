@@ -109,7 +109,7 @@ Dossier contenant les composants/librairies venant de l'extérieur
 configuration/admin/
 ```
 
-Dossier contenant le fichiersde configuration YAML permettant de définir pour chaque espaces "privés":
+Dossier contenant le fichier de configuration YAML permettant de définir pour chaque espaces "privés":
 - Les pages protégées, non-accessible sans connexion
 - Les pages non-accessible lors de la connexion
 - Les pages de redirection pour chaque cas:
@@ -144,23 +144,89 @@ différentes bases de données en fonction de l'environnement de dev en cours (d
 |
 ```
 
+=======
 
+#### 3 - Le dossier design_files
 
-- `configuration/database/` - Dossier contenant un fichier de conf YAML définissant les paramètres de connexion aux bases de données selon l'environnement de dev
+```sh
+configuration/design_files/
+```
 
-- `configuration/design_files/`
-  - `config_bootstrap` - fichier de conf YAML permettant d'activer l'utilisation de bootstrap dans le projet
-  - `config_jsfile` - fichier de conf YAML permettant d'indiquer les fichier js à charger, et pour quelles pages
-  - `config_less`  - fichier de conf YAML permettant d'indiquer si on souhaite activer less, et les fichier less à charger, et pour quelles pages
-  - `config_stylesheet`  - fichier de conf YAML permettant d'indiquer les fichiers css à charger, et pour quelles pages
+Dossier contenant les fichiers de configuration YAML permettant de gérer
+les dépendances de fichiers CSS, JS, LESS, Bootstrap, Knacss pour chaque page
 
-- `configuration/environnement/` - Dossier contenant un fichier de conf YAML définissant l'environnement de dev
+```
+|- configuration/
+|  |- design files/
+|  |  |- <config_bootstrap>
+|  |  |- <config_knacss>
+|  |  |- <config_jsfile>
+|  |  |- <config_less>
+|  |  |- <config_stylesheet>
+|  |
+|
+```
 
-- `configuration/twig/`
-  - `config_twig` - fichier de conf YAML permettant d'initialiser les variables du render twig
-  - `config_templates` - fichier de conf YAML permettant de définir les différents layouts à charger pour des pages spécifiques (par exemple, un espace admin n'aura pas le même header qu'un page du site).
+=======
 
-  =======
+#### 4 - Le dossier environment
+
+```sh
+configuration/environment/
+```
+
+Dossier contenant le fichier de configuration YAML permettant de définir l'environnement de dev en cours (dev, test, prod)
+
+```
+|- configuration/
+|  |- environnement/
+|  |  |- <config_environment>
+|  |
+|
+```
+
+=======
+
+#### 5 - Le dossier routes
+
+```sh
+configuration/routes/
+```
+
+Dossier contenant le fichier de configuration YAML permettant de lister les controllers appartenant aux bons sous-dossiers conformément à la structuration des dossiers à partir de app/controllers,
+cela afin de permettre au router du framework de charger les bons controllers au moment opportun (en fonction de l'URL).
+
+```
+|- configuration/
+|  |- routes/
+|  |  |- <config_routes>
+|  |
+|
+```
+
+=======
+
+#### 6 - Le dossier twig
+
+```sh
+configuration/twig/
+```
+
+Dossier contenant les fichiers de configuration YAML permettant:
+- De définir le nommage des variables TWIG utilisée dans les vues
+- De définir l'emplacement du dossiers contenant les vues
+- De définir pour chaque template/layout; la liste des pages qui y sont associées
+
+```
+|- configuration/
+|  |- twig/
+|  |  |- <config_templates>
+|  |  |- <config_twig>
+|  |
+|
+```
+
+=======
 
 ### Core/
 
