@@ -41,7 +41,9 @@ Dossier contenant l'ensemble des controllers, rangés par types de controller, p
 app/models/
 ```
 
-Dossier contenant l'ensemble des class models, chaque class model correspondant à un module (Ex: model "Blog" ou "User")
+Dossier contenant l'ensemble des class models, chaque class model correspondant à un module
+
+(Ex: model "Blog" ou "User")
 
 ```
 |- app/
