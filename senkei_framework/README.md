@@ -1,75 +1,119 @@
-# framework - v1
+# Senkei Framework v 1.0.0
 
-***
+Framework intégralement  développé from scratch, respectant les concepts de Model View Controller, et de Programmation Orientée Objet.
 
-Architecture développée from scratch version 1, respectant les principes de model view controller, et de la programmation orientée objet.
+### Lien demo
 
+http://vacherot.etudiant-eemi.com/perso/dossier/malcolm0810/private/s2705/senkei_framework/
 
-
-### Arborescence de l'architecture
+### Vue d'ensemble
 
 ```
-api-v1/
+senkei_framework/
+  |
   |- app/
   |  |- controllers/
-  |  |  |- <Classes définissant l'affichage d'une page, ses données et permettant de gérér son aspect fonctionnel>
+  |  |  |- ajax_controllers/
+  |  |  |  |- dossier_module_ajax1/
+  |  |  |  |  |- <AjaxControllers>
+  |  |  |  |  |
+  |  |  |- simple_controllers/
+  |  |  |  |- dossier_module1/
+  |  |  |  |  |- <Controllers>
+  |  |  |  |  |
+  |  |  |  |- dossier_module2/
+  |  |  |  |  |- <Controllers>
+  |  |  |  |  |
+  |  |  |- special_controllers/
+  |  |  |  |- <specialControllers>
+  |  |  |
   |  |- models/
   |  |  |- <models de données>
+  |  |  |
   |  |- services/
-  |  |  |- <composants réutilisables>
   |  |  |- <Hash>
   |  |  |- <Paginate>
   |  |  |- <SendMail>
   |  |  |- <Session>
   |  |  |- <UploadFile>
   |  |  |- <Validator>
+  |  |  |
   |  |- vendors/
-  |  |  |- <less>
-  |  |  |- <twig>
-  |  |  |- <yaml>
+  |  |  |- less/
+  |  |  |- twig/
+  |  |  |- yaml/
+  |  |  |
+  |  |
+  |
   |- configuration/
   |  |- admin/
-  |  |  |- <espaces admin et pages respectivement associées>
+  |  |  |- <pages>
+  |  |  |
   |  |- database/
-  |  |  |- <fichiers de configuration pour accès bdd selon environnement de dev>
+  |  |  |- <config_db>
+  |  |  |
   |  |- design files/
-  |  |  |- <fichiers permettant de gérer les dépendances pour fichiers css, js, less, bootstrap en fonction des pages>
   |  |  |- <config_bootstrap>
+  |  |  |- <config_knacss>
   |  |  |- <config_jsfile>
   |  |  |- <config_less>
   |  |  |- <config_stylesheet>
+  |  |  |
   |  |- environnement/
-  |  |  |- <definition environnment de dev>
+  |  |  |- <config_environment>
+  |  |  |
+  |  |- routes/
+  |  |  |- <config_routes>
+  |  |  |
   |  |- twig/
   |  |  |- <config_templates>
   |  |  |- <config_twig>
+  |  |
+  |
   |- core/
   |  |- database/
-  |  |  |- <Database - fichier de connexion à la base de données>
-  |  |  |- <Models - query builders utilisés par les fichiers models>
+  |  |  |- <Database>
+  |  |  |- <ModelsProvider>
+  |  |  |
   |  |- system/
-  |  |  |- <fichiers permettant le fonctionnement du Model Controller>
-  |  |  |- <AbstractPageSystem>
-  |  |  |- <PageSystem>
+  |  |  |- <ControllersProviderSystem>
+  |  |  |- <RoutageSystem>
   |  |  |- <System>
-  |  |- Autoloader
-  |  |- Configuration
+  |  |  |
+  |  |- system_services/
+  |  |  |- <AdminSystem>
+  |  |  |- <EnvironmentSystem>
+  |  |  |- <FilesDependancySystem>
+  |  |  |- <LangSystem>
+  |  |  |- <TwigSystem>
+  |  |  |
+  |  |- <Autoloader>
+  |  |- <Configuration>
+  |  |
+  |
   |- lang/
-  |  |- en/
-  |  |  |- <fichier clés de langue en anglais>
-  |  |- fr/
-  |  |  |- <fichier clés de langue en français>
+  |  |- <en>
+  |  |- <fr>
+  |
   |- templates/
   |  |- mail_tempaltes/
-  |  |  |- <fichiers de templates mail>
+  |  |  |- <mail_confirmation_inscription>
+  |  |
+  |
   |- views/
   |  |- macros/
-  |  |  |- <fichiers contenant les macros twig>
   |  |  |- <bootstrapForm>
-  |  |  |- <form>
+  |  |  |- <bootstrapNotif>
+  |  |  |- <paginate>
+  |  |  |
   |  |- pages/
-  |  |  |- <pages du site>
+  |  |  |- dossier_module/
+  |  |  |  |- <pages>
+  |  |  |- dossier_module2/
+  |  |  |  |- <pages>
+  |  |  |
   |  |- <fichiers layout>
+  |
   |- www/
   |  |- ajax/
   |  |  |- <index ajax>
@@ -80,6 +124,8 @@ api-v1/
   |  |  |- js/
   |  |  |- less/
   |  |  |- pictures/
+  |  |
+  |
   |- index
 ```
 
