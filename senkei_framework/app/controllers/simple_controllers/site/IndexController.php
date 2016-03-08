@@ -42,7 +42,7 @@ class IndexController extends \Core\System\ControllersProviderSystem
     {
         $this->setPageView('index.twig');
         $this->setPageInfos(array(
-            'page_title' => 'Page Index'
+            'page_title' => 'Hello World'
         ));
     }
 

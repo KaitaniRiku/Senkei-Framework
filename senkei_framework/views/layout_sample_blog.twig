@@ -36,13 +36,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="text-white navbar-brand" href="index.php?p=blog">SENKEI Blog</a>
+              <a class="text-white navbar-brand" href="index.php?p=presentation">SENKEI Framework</a>
             </div>
 
             <!-- Menu Full -->
             <div class="collapse navbar-collapse" id="target_menu">
                 <!-- Simple link -->
                 <ul class="nav navbar-nav">
+					<li><a class="btn-link" href="index.php?p=blog">HomeBlog</a></li>
 					{% if not session.user %}
 						<li><a class="btn-link" href="index.php?p=blog_signup">Sign up</a></li>
 						<li><a class="btn-link" href="index.php?p=blog_signin">Sign in</a></li>
@@ -63,7 +64,6 @@
                         </ul>
                     </li>
 					<li class="active"><a class="btn-link" href="index.php?p=index">Mon application</a></li>
-					<li class="active"><a class="text-danger" href="index.php?p=presentation">Framework presentation</a></li>
 					{% if session.user %}
 						<li class="text-success"><a href="" class="">{{ session.user.user_pseudo }}</a></li>
 						<li class="text-success"><a href="" class="navbar-brand"><img class="header_profil_img" src="www/assets/pictures/sample_blog/{{ session.user.user_img }}" alt="" /></a></li>
