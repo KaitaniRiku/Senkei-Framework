@@ -92,7 +92,7 @@ class Blog_add_articleController extends \Core\System\ControllersProviderSystem
         // Si un GET['modif_article'] est détecté, on recupère l'article concerné
         $article = isset($this->get['modif_article']) ? $this->blog->getFullArticles(array('article_id' => $this->get['modif_article'])) : null;
         // Si un GET['modif_article'] est détecté, on change le titre du module "ajouter" -> "modifier"
-        $titreModule = isset($this->get['modif_article']) ? 'Modification d\'un article du blog' : 'Ajouter un article au blog'
+        $titreModule = isset($this->get['modif_article']) ? 'Modification d\'un article du blog' : 'Ajouter un article au blog';
         // Si un GET['modif_article'] est détecté, le name du submit du formulaire change
         $btnSumbitName = isset($this->get['modif_article']) ? 'modifier' : 'publier';
 

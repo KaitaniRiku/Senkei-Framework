@@ -1,8 +1,6 @@
 # Senkei Framework v-1.0.0
 
-Framework intégralement  développée from scratch, respectant les principes de Model View Controller, et de la Programmation Orientée Objet.
-
-
+Framework intégralement  développé from scratch, respectant les concepts de Model View Controller, et de Programmation Orientée Objet.
 
 ### Arborescence de l'architecture
 

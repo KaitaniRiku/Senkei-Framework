@@ -62,6 +62,7 @@
 							{% endif %}
                         </ul>
                     </li>
+					<li class="active"><a class="btn-link" href="index.php?p=index">Mon application</a></li>
 					<li class="active"><a class="text-danger" href="index.php?p=presentation">Framework presentation</a></li>
 					{% if session.user %}
 						<li class="text-success"><a href="" class="">{{ session.user.user_pseudo }}</a></li>
@@ -120,7 +121,7 @@
                     <br/><br/>
 
 					<!-- Boutons d'affichage des dump des fichiers chargés pour la page actuelle -->
-                    <h3>Fichiers (css, js, bootstrap, knacss) chargés</h3>
+                    <h3>Fichiers chargés sur cette page</h3>
                     <div class="separator"></div>
                     <div id="btn_debug_container">
                         {% for key, value in debug_loaded_files %}

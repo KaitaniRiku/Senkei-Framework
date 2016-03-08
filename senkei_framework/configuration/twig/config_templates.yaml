@@ -29,6 +29,9 @@ Guide:
     template: layout_guide.twig
     pages:
         - presentation
+        - how_to_use
+        - how_it_works
+        - documentation
 
 Default:
 	template: layout.twig

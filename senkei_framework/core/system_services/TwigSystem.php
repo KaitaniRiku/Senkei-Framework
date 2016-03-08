@@ -24,7 +24,7 @@
  * configuration/twig/config_twig.yaml (détails du fichier dans la doc de la Method getTwigConfiguration())
  * configuration/twig/config_templates.yaml (détails du fichier dans la doc de la Method getTemplateConfiguration())
  *
- * 
+ *
  * @author : Kévin Vacherot <kevinvacherot@gmail.com>
  *
  */
@@ -154,7 +154,7 @@ class TwigSystem
         self::$pageInfos = $pageInfos;
         self::$debug = $debug;
         self::$filesToLoad = $filesToLoad;
-        self::$contentLang = self::$contentLang;
+        self::$contentLang = $contentLang;
 
         return self::load()->loadTwig();
     }

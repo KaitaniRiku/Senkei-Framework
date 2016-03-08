@@ -45,11 +45,13 @@
                 <ul class="nav navbar-nav">
 					<li><a class="btn-link" href="index.php?p=presentation">Presentation</a></li>
 					<li><a class="btn-link" href="index.php?p=how_to_use">How to use</a></li>
-					<li><a class="btn-link" href="index.php?p=how_it_work">How it works</a></li>
+					<li><a class="btn-link" href="index.php?p=how_it_works">How it works</a></li>
+					<li><a class="btn-link" href="index.php?p=documentation">Documentation</a></li>
                 </ul>
 
                 <!-- Nav Right -->
                 <ul class="nav navbar-nav navbar-right">
+					<li class="active"><a class="btn-link" href="index.php?p=index">Mon application</a></li>
 					<li class="active"><a href="index.php?p=blog">Sample blog</a></li>
                 </ul>
             </div>
@@ -106,7 +108,7 @@
                     <br/><br/>
 
 					<!-- Boutons d'affichage des dump des fichiers chargés pour la page actuelle -->
-                    <h3>Fichiers (css, js, bootstrap, knacss) chargés</h3>
+                    <h3>Fichiers chargés sur cette page</h3>
                     <div class="separator"></div>
                     <div id="btn_debug_container">
                         {% for key, value in debug_loaded_files %}

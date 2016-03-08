@@ -28,10 +28,29 @@
 
     <body>
 		<div id='top'></div>
-        <header class="header">
-			<a href="{{current_url}}&amp;lang=fr">fr</a> |
-			<a href="{{current_url}}&amp;lang=en">en</a>
-        </header>
+		<nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Menu Mobile -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#target_menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="text-white navbar-brand" href="index.php?p=presentation">SENKEI Framework</a>
+            </div>
+
+            <!-- Menu Full -->
+            <div class="collapse navbar-collapse" id="target_menu">
+                <!-- Nav Right -->
+                <ul class="nav navbar-nav navbar-right">
+					<li><a class="" href="{{current_url}}&amp;lang=fr">Français</a></li>
+					<li><a class="" href="{{current_url}}&amp;lang=en">English</a></li>
+                </ul>
+            </div>
+          </div>
+        </nav>
 
         <div class="container">
             {% include page_view %}
@@ -81,7 +100,7 @@
 					<br/><br/>
 
 					<!-- Boutons d'affichage des dump des fichiers chargés pour la page actuelle -->
-                    <h3>Fichiers (css, js, bootstrap, knacss) chargés</h3>
+                    <h3>Fichiers (css, js, bootstrap, knacss) chargés sur cette page</h3>
                     <div class="separator"></div>
                     <div id="btn_debug_container">
                         {% for key, value in debug_loaded_files %}

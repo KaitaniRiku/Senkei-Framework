@@ -1,1 +1,17 @@
-<h1>{{ content.hello_world }}</h1>
+<div class="jumbotron">
+    <h1>{{ content.hello_world }}</h1>
+    <hr/>
+    <br/>
+    <p>
+        {{ content.welcome_msg }}
+        <span class="text-danger">{{ content.senkei_framework }}</span>
+        {{ content.to_develop }}
+    </p>
+    <p>
+        {{ content.getting_started_msg }}
+        <span class="text-danger">{{ content.get_started }}</span>
+    </p>
+    <br/>
+    <br/>
+    <p><a class="btn btn-danger btn-lg" href="index.php?p=presentation" role="button">{{ content.learn_more }}</a></p>
+</div>

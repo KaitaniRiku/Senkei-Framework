@@ -37,3 +37,18 @@ files:
 
     blog_signin:
         - sample_blog.css
+
+    index:
+        - presentation.css
+
+    presentation:
+        - presentation.css
+
+    how_to_use:
+        - presentation.css
+
+    how_it_works:
+        - presentation.css
+
+    documentation:
+        - presentation.css

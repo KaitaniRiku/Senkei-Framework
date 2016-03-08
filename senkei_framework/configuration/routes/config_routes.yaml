@@ -25,6 +25,9 @@ simple_controllers:
 
     guide:
         - presentation
+        - how_to_use
+        - how_it_works
+        - documentation
 
 # Listes des controllers ajax reparties dans les sous-dossiers du dossier "ajax_controllers"
 ajax_controllers:

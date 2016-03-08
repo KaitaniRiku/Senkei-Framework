@@ -96,14 +96,14 @@ class LangSystem
     private function setLang()
     {
         if(isset($_GET['lang'])){
-            $lang = $_GET['lang'] === 'en' || $_GET['lang'] === 'fr' ? $_GET['lang'] : 'en';
+            $lang = $_GET['lang'] === 'en' || $_GET['lang'] === 'fr' ? $_GET['lang'] : 'fr';
             if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] !== $lang){
                 setcookie('lang', $lang, time()+3600*24*7);
             }
             header('location: '.$_SERVER['HTTP_REFERER']);
         }
 
-        $url = isset($_COOKIE['lang']) ? 'lang/' . $_COOKIE['lang'] . '.php' : 'lang/en.php';
+        $url = isset($_COOKIE['lang']) ? 'lang/' . $_COOKIE['lang'] . '.php' : 'lang/fr.php';
 
         return is_file($url) ? require $url : null;
     }
