@@ -1,6 +1,6 @@
 # Description des dossiers
 
-#### App/
+### App/
 
 ```sh
 Dossier contenant les fichiers liées au développement spécifique à l'application
@@ -36,7 +36,7 @@ Dossier contenant les fichiers liées au développement spécifique à l'applica
 
   =======
 
-#### Configuration/
+### Configuration/
 
 ```sh
 Dossier contenant les fichiers de configuration de l'architecture
@@ -60,7 +60,7 @@ Dossier contenant les fichiers de configuration de l'architecture
 
   =======
 
-#### Core/
+### Core/
 
 ```sh
 Dossier contenant les classes permettant de démarrer et d'enclencher les mécanismes de l'architecture
@@ -110,7 +110,7 @@ Dossier contenant les classes permettant de démarrer et d'enclencher les mécan
 
     =======
 
-#### Lang/
+### Lang/
 
 ```sh
 Dossier contenant les fichiers de lang, rangés par dossiers
@@ -121,7 +121,7 @@ Dossier contenant les fichiers de lang, rangés par dossiers
 
     =======
 
-#### Templates/
+### Templates/
 
 ```sh
 Dossier contenant les différents templates mail
@@ -129,7 +129,7 @@ Dossier contenant les différents templates mail
 
 =======
 
-#### Views/
+### Views/
 
 ```sh
 Dossier contenant les vues
@@ -144,7 +144,7 @@ Dossier contenant les vues
 
     =======
 
-#### www/
+### www/
 
 ```sh
 Dossier public
