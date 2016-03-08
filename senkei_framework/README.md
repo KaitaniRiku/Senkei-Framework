@@ -2,6 +2,8 @@
 
 ### App/
 
+=======
+
 #### 1 - Le dossier controllers
 
 ```sh
@@ -39,7 +41,7 @@ Dossier contenant l'ensemble des controllers, rangés par types de controller, p
 app/models/
 ```
 
-Dossier contenant l'ensemble des class models de données
+Dossier contenant l'ensemble des class models, chaque class model correspondant à un module (Ex: model "Blog" ou "User")
 
 ```
 |- app/
@@ -50,34 +52,56 @@ Dossier contenant l'ensemble des class models de données
 |
 ```
 
-  ***
+=======
 
-- `app/models/` - Dossier class contenant les models de données, rangés par modules.
-  - `app/models/Blog.php` - Class/model/ contenant l'ensemble des méthodes permettant de gérer les intéractions concernant les articles du blog et la base de données
-  - `app/models/Contact.php` - Class/model/ contenant l'ensemble des méthodes permettant de gérer la reception et la gestion des messages dans la la bdd
-  - `app/models/Faq.php` - Class/model/ contenant l'ensemble des méthodes permettant de gérer la Faq dans la base de données
-  - `app/models/User.php` - Class/model/ contenant l'ensemble des méthodes permettant de gérer les intéractions entre les utilisateurs et la base de données
+#### 3 - Le dossier services
 
-  ***
+```sh
+app/services/
+```
 
-- `app/services/` - Dossier contenant les composants réutilisables par l'architecture
-  - `app/services/Paginate.php` - Class permettant de gérer la pagination
-  - `app/services/Hash.php` - Class static contenant différentes methodes de hashage et de cryptage
-  - `app/services/Sendmail.php` - Class permettant la gestion de l'envoi de mail
-  - `app/services/Session.php` - Class permettant la génération d'une session avec une clé de sécurité
-  - `app/services/UploadFile.php` - Class permettant la gestion de l'upload de fichier
-  - `app/services/Validator.php` - Class static contenant différentes methodes de contrôle de validation de données
+Dossier contenant l'ensemble des services (ou composants) réutilisables dans le cadre des développements applicatif
 
-  ***
+```
+|- app/
+|  |- services/
+|  |  |- <Hash>
+|  |  |- <Paginate>
+|  |  |- <SendMail>
+|  |  |- <Session>
+|  |  |- <UploadFile>
+|  |  |- <Validator>
+|  |
+|
+```
 
-- `app/vendors/` - Dossier contenant les composants venant de l'extérieur
-  - `app/vendors/Yaml` - Contient un composant de parser les fichiers YAML pour les fichiers de configuration d'architecture
-  - `app/vendors/Less` - Contient un composant permettant de compiler des fichier less en css avec php
-  - `app/vendors/Twig` - Ensemble de fichier permettant l'utilisation du moteur de template TWIG
+=======
 
-  =======
+#### 4 - Le dossier vendors
+
+```sh
+app/vendors/
+```
+
+Dossier contenant les composants/librairies venant de l'extérieur
+
+```
+|- app/
+|  |- vendors/
+|  |  |- less/
+|  |  |- twig/
+|  |  |- yaml/
+|  |
+|
+```
+
+
+=======
+=======
 
 ### Configuration/
+
+=======
 
 ```sh
 Dossier contenant les fichiers de configuration de l'architecture
