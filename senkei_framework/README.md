@@ -310,6 +310,35 @@ Dossier contenant les class déclenchées depuis System(), et permettant d'ajout
 |
 ```
 
+=======
+
+#### 4 - Autres fichiers (Configuration et Autoloader)
+
+```sh
+core/<Configuration>
+core/<Autoloader>
+```
+
+Dossier contenant les class déclenchées depuis System(), et permettant d'ajouter des mécanisme à l'architecture:
+- Mécanismes dynamiques de gestion d'espaces utilisateur et d'administration (connexion, protection, redirection, deconnexion)
+- Mécanisme de définition de l'environnement de développement en cours
+- Mécanisme de gestion de dépendance de fichiers CSS, jS, LESS, Bootstrap, Knacss pour chaque page
+- Mécanisme de fichiers de langues (internationalisation)
+- Mécanisme de moteur de template avec TWIG
+
+
+```
+|- core/
+|  |- system_services/
+|  |  |- <AdminSystem>
+|  |  |- <EnvironmentSystem>
+|  |  |- <FilesDependancySystem>
+|  |  |- <LangSystem>
+|  |  |- <TwigSystem>
+|  |
+|
+```
+
 
 
 
