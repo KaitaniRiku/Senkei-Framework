@@ -242,48 +242,77 @@ Dossier contenant les fichiers de configuration YAML permettant:
 
 ### Core/
 
+=======
+
+#### 1 - Le dossier database
+
 ```sh
-Dossier contenant les classes permettant de démarrer et d'enclencher les mécanismes de l'architecture
+core/database/
 ```
 
-- `core/database/`
-  - `core/database/Database.php` - Class etablissant la connexion de type PDO avec la base de données
-  - `core/database/Models.php` - Class définissant la base de données à utiliser en fonction de l'environnement, et contenant les query builders rendant plus facile l'écriture des requêtes SQL
+Dossier contenant les class permettant d'établir une connexion de type PDO avec la base de données, de génerer l'objet PDO,
+et, par mécanisme d'héritage, de pourvoir toutes les class "model" de "query-builers" afin de faciliter l'écriture des requêtes SQL.
 
-  ***
+```
+|- core/
+|  |- database/
+|  |  |- <Database>
+|  |  |- <ModelsProvider>
+|  |
+|
+```
 
-- `core/system/`
-  - `core/system/System.php` - Class permettant le demarrage et le fonctionnement de l'architecture
-    - Etablissement du mode de fonctionnement: ajax ou standard
-    - Chargement et traitement des fichiers de config
-    - Lancement du system de langue
-    - Définition de l'environnement de dev
-    - Compilation des fichiers less
-    - Lancement de twig avec les mécanismes de render, et de layout
-      - Chargement du layout approprié
-      - Définition de la page html/twig à charger, définie au niveau du controller de la page courante
-      - Transmission des informations (title, meta) à la page html/twig, définies au niveau du controller de la page courante
-      - Transmission des variables générées au niveau du controller à la page html/twig courante
-      - Définition des fichiers js et css à charger pour la page courante
-      - Display Twig
-    - Récupération du return de la méthode exécutée (si mode AJAX)
-    - Instanciation du rooter `core/system/PageSystem.php`
+=======
 
-***
+#### 2 - Le dossier system
 
-  - `core/system/PageSystem.php`
-    - Class permettant de gérer le routage, soit:
-      - l'instanciation du controller approprié en fonction de la page indiquée par l'url (nous rappelons que chaque contrôleur permet de générer l'affichage et de garantir l'aspect fonctionnel d'une page spécifique).
-      - l'exécution dynamique de la méthode (action) appartenant au bon controller (module) (si mode AJAX)
+```sh
+core/system/
+```
 
-***
+Dossier contenant les class permettant d'enclencher l'ensembles des mécanismes de l'architecture de manière à la faire fonctionner
 
-  - `core/system/AbstractPageSystem.php` - Class permettant la transmissions de datas entre `controller` et `pageSystem`:
-    - variables super globales (GET, POST, FILES, SESSION)
-    - la page/vue à charger ($pageView) et ses informations ($pageInfos)
-    - variables pour le twig render ($variablesToView)
+```
+|- core/
+|  |- system/
+|  |  |- <ControllersProviderSystem>
+|  |  |- <RoutageSystem>
+|  |  |- <System>
+|  |
+|
+```
 
-***
+=======
+
+#### 3 - Le dossier system_services
+
+```sh
+core/system_services/
+```
+
+Dossier contenant les class déclenchées depuis la System(), et permettant d'ajouter des mécanisme à l'architecture:
+- Mécanismes dynamiques de gestion d'espaces utilisateur et d'administration (connexion, protection, redirection, deconnexion)
+- Mécanisme de définition de l'environnement de développement en cours
+- Mécanisme de gestion de dépendance de fichier CSS, jS, LESS, Bootstrap, Knacss pour chaque page
+- Mécanisme de fichiers de langues (internationalisation)
+- Mécanisme de moteur de template avec TWIG
+
+
+```
+|- core/
+|  |- system_services/
+|  |  |- <AdminSystem>
+|  |  |- <EnvironmentSystem>
+|  |  |- <FilesDependancySystem>
+|  |  |- <LangSystem>
+|  |  |- <TwigSystem>
+|  |
+|
+```
+
+
+
+
 
   - `core/Autoloader.php` - Class permettant le chargement de toutes les classes de l'application
   - `core/Configuration.php` - Class permettant de parser les fichier YAML de config
