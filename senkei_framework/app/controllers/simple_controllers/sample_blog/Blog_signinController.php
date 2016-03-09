@@ -48,7 +48,7 @@ class Blog_signinController extends \Core\System\ControllersProviderSystem
     {
         $this->setPageView('blog_signin.twig');
         $this->setPageInfos(array(
-            'page_title' => 'Blog'
+            'page_title' => 'Sign In'
         ));
         $this->user = new \App\Models\SampleUser();
     }
