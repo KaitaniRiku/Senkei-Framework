@@ -1,0 +1,13 @@
+.jumbotron h1 {
+  font-size: 3.5em;
+}
+.jumbotron p {
+  font-size: 1.25em;
+  font-family: "Lato";
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+.jumbotron .btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

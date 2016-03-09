@@ -1,0 +1,32 @@
+##
+# Fichiers de configuration des espaces admin et user
+##
+
+# Configuration pour un espace admin $_SESISON['admin']
+espaces_admin:
+    # On indique les 3 différents liens de redirection, dans l'ordre:
+    # - Page de redirection suite à la deconnexion
+    # - Page de redirection lorsque l'on souhaite accéder à une page protégée, sans être connecté
+    # - Page de redirection lorsque l'on souhaite accéder à une page innaccessible quand on est connecté, en étant connecté
+    redirect:
+        on_logged_out:
+        no_access_on_logged_out:
+        no_access_on_logged_in:
+    # On indique la liste des pages protégées, nécessitant une connexion pour y accéder
+    pages_no_access_on_logged_out:
+    # On indique la liste des pages innaccessibles pour un user connecté
+    pages_no_access_on_logged_in:
+    # On indique le lien à detecter dans l'url pour opérer une deconnexion
+    logout_link: logout
+
+
+
+# Configuration pour un espace admin $_SESISON['user']
+espaces_user:
+    redirect:
+        on_logged_out:
+        no_access_on_logged_out:
+        no_access_on_logged_in:
+    pages_no_access_on_logged_out:
+    pages_no_access_on_logged_in:
+    logout_link:

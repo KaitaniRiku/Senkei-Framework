@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>{{ page_infos.page_title }}</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+    <link rel="icon" href="http://icons.iconarchive.com/icons/musett/dragon-ballz/256/Dragon-Ball-icon.png">
+
+    	<!-- Chargement des fichiers CSS de bootstrap (si souhaité dans la config) -->
+    	{% if bootstrap_files.use  %}
+    		<link rel="stylesheet" type="text/css" href="www/assets/bootstrap/css/{{ bootstrap_files.files.css }}">
+    	{% endif %}
+		<!-- Chargement des fichiers CSS de knacss (si souhaité dans la config) -->
+    	{% if knacss_files.use  %}
+    		<link rel="stylesheet" type="text/css" href="www/assets/knacss/css/{{ knacss_files.files.css }}">
+    	{% endif %}
+    	<!-- Chargement des fichiers CSS de la page courante (défini dans la config) -->
+    	{% for key, value in stylesheet %}
+        	<link rel="stylesheet" type="text/css" href="www/assets/css/{{ value }}">
+    	{% endfor %}
+    	<!-- Chargement des fichiers CSS (issue de la compilation par less) de la page courante (défini dans la config) -->
+    	{% for key, value in less_files %}
+        	<link rel="stylesheet" type="text/css" href="www/assets/css/{{ value }}">
+    	{% endfor %}
+    </head>
+
+    <body>
+		<div id='top'></div>
+		<nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Menu Mobile -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#target_menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="text-white navbar-brand" href="index.php?p=presentation">SENKEI Framework</a>
+            </div>
+
+            <!-- Menu Full -->
+            <div class="collapse navbar-collapse" id="target_menu">
+                <!-- Nav Right -->
+                <ul class="nav navbar-nav navbar-right">
+					<li><a class="" href="{{current_url}}&amp;lang=fr">Français</a></li>
+					<li><a class="" href="{{current_url}}&amp;lang=en">English</a></li>
+                </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container">
+            {% include page_view %}
+        </div>
+
+        <footer class="footer">
+        </footer>
+
+
+    	<script type="text/javascript" src="www/assets/js/jquery-1.11.3.min.js"></script>
+    	<!-- Chargement des fichiers JS de la page courante (défini dans la config) -->
+    	{% for key, value in js_files %}
+    	<script type="text/javascript" src="www/assets/js/{{ value }}"></script>
+    	{% endfor %}
+    	<!-- Chargement des fichiers JS de bootstrap (si souhaité dans la config) -->
+    	{% if bootstrap_files.use %}
+    	<script src="www/assets/bootstrap/js/{{ bootstrap_files.files.js }}"></script>
+    	{% endif %}
+
+    	{% if debug_tool %}
+		<div id="debug_tool">
+			<div id="debug_tool_title">
+                <h3>DEBUG TOOL</h3>
+			</div>
+			<div id="debug_tool_core">
+				<div id="debug_tool_core_container">
+
+					<!-- Boutons d'affichage des dump des variables super globales -->
+					<h3>Variables super globales</h3>
+					<div class="separator"></div>
+					<div id="btn_debug_container">
+						{% for key, value in debug_global_vars %}
+							<a href="#top"><button class="btn_debug" modal="dump_{{ key }}">{{ key }}</button></a>
+						{% endfor %}
+					</div>
+					<!-- Modals contenants les dump respectifs de chaque variable super globales -->
+					{% for key, value in debug_global_vars %}
+					<div class="debug_item" id="dump_{{ key }}">
+						<button class="btn_close_modal">X</button>
+						<div class="debug_item_content">
+							$_{{ key }}<br/><br/>
+							<pre>{{ dump(value) }}</pre>
+						</div>
+					</div>
+					{% endfor %}
+
+					<br/><br/>
+
+					<!-- Boutons d'affichage des dump des fichiers chargés pour la page actuelle -->
+                    <h3>Fichiers chargés sur cette page</h3>
+                    <div class="separator"></div>
+                    <div id="btn_debug_container">
+                        {% for key, value in debug_loaded_files %}
+                            <a href="#top"><button class="btn_debug" modal="dump_{{ key }}">{{ key }}</button></a>
+                        {% endfor %}
+                    </div>
+                    <!-- Modals contenants les dump respectifs de chaque type de fichier chargé -->
+                    {% for key, value in debug_loaded_files %}
+                    <div class="debug_item" id="dump_{{ key }}">
+                        <button class="btn_close_modal">X</button>
+                        <div class="debug_item_content">
+                            $_{{ key }}<br/><br/>
+                            <pre>{{ dump(value) }}</pre>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <br/><br/>
+
+					<!-- Boutons d'affichage des dump des variables de la page -->
+					<h3>Variables de la page</h3>
+					<div class="separator"></div>
+					<div id="btn_debug_container">
+						{% for key, value in controller_vars %}
+							<a href="#top"><button class="btn_debug" modal="dump_{{ key }}">{{ key }}</button></a>
+						{% endfor %}
+					</div>
+					<!-- Modals contenants les dump respectifs de chaque variable de la page -->
+					{% for key, value in controller_vars %}
+					<div class="debug_item" id="dump_{{ key }}">
+						<button class="btn_close_modal">X</button>
+						<div class="debug_item_content">
+							${{ key }}<br/><br/>
+							<pre>{{ dump(value) }}</pre>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+				<div id="modal_container"></div>
+			</div>
+		</div>
+	{% endif %}
+    </body>
+</html>

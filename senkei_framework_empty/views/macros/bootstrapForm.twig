@@ -1,0 +1,125 @@
+{# Macro pour l'affichage de forulaires avec bootstrap #}
+
+{# Balise <form> #}
+{% macro formTag(id, action, method) %}
+    <form id="{{ id }}" class="{{ class|default('default_class') }}" action="{{ action|default('') }}" method="{{ method|default('post') }}" enctype="multipart/form-data">
+{% endmacro %}
+
+
+{# Champs de type text #}
+{% macro inputText(name, label, placeholder, value, rules, class) %}
+    <div class="form-group">
+        <label for="{{ name }}">{{ label }}</label>
+        <input
+            id="{{ name }}"
+            name="{{ name }}"
+            value="{{ value }}"
+            type="text"
+            class="form-control {{ class|default('default_class') }}"
+            placeholder="{{ placeholder }}"
+            {{ rules }}>
+        <p class="help"></p>
+    </div>
+{% endmacro %}
+
+
+{# Champ de type textarea #}
+{% macro inputTextarea(name, label, value, rules, rows, class) %}
+    <div class='form-group'>
+        <label for="{{ name }}">{{ label }}</label>
+        <textarea
+            id="{{ name }}"
+            name="{{ name }}"
+            class="form-control {{ class|default('default_class') }}"
+            rows="{{ rows|default(5) }}"
+            {{ rules }}>{{ value }}</textarea>
+        <p class="help"></p>
+    </div>
+{% endmacro %}
+
+
+{# Champs de type password #}
+{% macro inputPassword(name, label, placeholder, value, rules, class) %}
+    <div class="form-group">
+        <label for="{{ name }}">{{ label }}</label>
+        <input
+            id="{{ name }}"
+            class="form-control {{ class|default('default_class') }}"
+            name="{{ name }}"
+            value="{{ value }}"
+            type="password"
+            class="form-control"
+            placeholder="{{ placeholder }}"
+            {{ rules }}>
+            <p class="help"></p>
+    </div>
+{% endmacro %}
+
+
+{# Champs de type file #}
+{% macro inputFile(name, label, required, class) %}
+    <div class="form-group">
+        <label for="{{ name }}">{{ label }}</label>
+        <input
+            id="{{ name }}"
+            class="{{ class|default('default_class') }}"
+            accept="image/jpg,image/JPG,image/JPEG,image/jpeg,image/png,image/PNG,image/gif,image/GIF"
+            name="{{ name }}[]"
+            type="file"
+            {{ required ? 'required' : '' }}>
+    </div>
+{% endmacro %}
+
+
+{# Input de type radio (choix unique) #}
+{% macro inputRadio(name, label, value, checked, class) %}
+    <div class="form-group">
+        <label for="{{ name }}">{{ label }}</label>
+        <input
+            id="{{ name }}"
+            class="{{ class|default('default_class') }}"
+            name="{{ name }}"
+            type="radio"
+            value="{{ value }}"
+            {{ checked|default('') }} >
+    </div>
+{% endmacro %}
+
+{# Input de type checkbox (choix multiple) #}
+{% macro inputCheckbox(name, label, value, checked, class) %}
+    <div class="form-group">
+        <label for="{{ name }}">{{ label }}</label>
+        <input
+            id="{{ name }}"
+            class="{{ class|default('default_class') }}"
+            name="{{ name }}[]"
+            type="checkbox"
+            value="{{ value }}"
+            {{ checked|default('') }} >
+    </div>
+{% endmacro %}
+
+
+
+
+
+
+{# Balise <form> inline #}
+{% macro formTagInline(id, action, method) %}
+    <form id="{{ id }}" class="form-inline {{ class|default('default_class') }}" action="{{ action|default('') }}" method="{{ method|default('post') }}" enctype="multipart/form-data">
+{% endmacro %}
+
+{# Champs type text inline #}
+{% macro inputTextInline(name, placeholder, value, rules, class) %}
+<div class="form-group">
+    <label class="sr-only" for="{{ name }}">{{ name }}</label>
+        <input
+            id="{{ name }}"
+            name="{{ name }}"
+            value="{{ value }}"
+            type="text"
+            class="form-control {{ class|default('default_class') }}"
+            placeholder="{{ placeholder }}"
+            {{ rules }}>
+    </div>
+{% endmacro %}

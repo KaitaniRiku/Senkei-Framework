@@ -1,0 +1,17 @@
+##
+# Configuration LESS
+#
+# Ce fichier de configuration permet:
+# De savoir si on souhaite utiliser LESS (la compilation)
+# De définir le repertoire des fichier LESS
+# De définir le dossier de destination des fichiers CSS compilés
+##
+
+use:
+    # On indique si on souhaite activer less
+    use_less: true
+    less_files_directory: 'www/assets/less/'
+    css_files_directory: 'www/assets/css/'
+
+    # On indique les fichiers less qu'on ne veut pas compilé
+    exception:

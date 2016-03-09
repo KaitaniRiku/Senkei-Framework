@@ -1,0 +1,13 @@
+##
+# Configuration Knacss
+#
+# Ce fichier de configuration permet de savoir si on souhaite utiliser Knacss
+# Et quel sont les fichiers CSS à charger le cas échéant
+##
+
+knacss:
+    # On indique si on souhaite utiliser Knacss: true ou false
+    use: false
+    # Indication du fichier CSS à l'adress www/assets/knacss/css/
+    files:
+        css: knacss.css

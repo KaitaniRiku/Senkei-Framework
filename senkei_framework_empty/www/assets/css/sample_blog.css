@@ -1,0 +1,27 @@
+.cloud_tags {
+  padding: 0px 20px 20px 0px;
+}
+.article_wrapper {
+  margin-bottom: 30px;
+}
+.header_profil_img {
+  margin-top: -7px;
+  width: 35px;
+  height: 35px;
+}
+.user_comment_img {
+  width: 50px;
+  height: 50px;
+}
+.categories_tags {
+  padding-right: 20px;
+}
+.article_img_wrapper {
+  margin-bottom: 20px;
+}
+.article_img_wrapper .article_img {
+  width: 100%;
+}
+.comment_wrapper {
+  padding: 15px 0px 15px 0px;
+}

@@ -1,0 +1,32 @@
+##
+# Configuration du nommage des variables TWIG a transmettre à la vue
+# Et de l'emplacement des fichiers de "vue"
+##
+
+Core:
+    folder: views
+    views_location: pages/
+
+# Configuration des variables TWIG
+Vars:
+    #Super globals
+    globals:
+        get: get
+        post: post
+        files: files
+        request: request
+        session: session
+        server: server
+        cookie: cookie
+    #Variables provenant du controller
+    controller:
+        project_var: controller_vars
+        current_view: page_view
+        page_infos: page_infos
+    #Variables fichier
+    files:
+        js: js_files
+        css: stylesheet
+        less: less_files
+        bootstrap_files: bootstrap_files
+        knacss_files: knacss_files

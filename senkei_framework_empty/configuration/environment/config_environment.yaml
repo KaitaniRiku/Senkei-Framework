@@ -1,0 +1,7 @@
+##
+# Configuration de l'environnement de développement : dev, test ou prod
+#
+# Ce fichier de configuration permet de définir l'environnement de dev en cours
+##
+
+server: dev

@@ -1,0 +1,15 @@
+##
+# Configuration Bootstrap
+#
+# Ce fichier de configuration permet de savoir si on souhaite utiliser Bootstrap
+# Et quel sont les fichier JS et CSS à charger le cas échéant
+##
+
+bootstrap:
+    # On indique si on souhaite utiliser Bootstrap: true ou false
+    use: true
+    # Indication du fichier js à l'adress www/assets/bootstrap/js/
+    # Indication du fichier css à l'adress www/assets/bootstrap/css/
+    files:
+        js: bootstrap.min.js
+        css: bootstrap.min.css

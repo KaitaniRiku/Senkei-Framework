@@ -1,0 +1,20 @@
+##
+# Configuration des routes
+#
+# Ce fichier de configuration permet de lister les controllers appartenant aux différents modules
+##
+
+#A partir du dossier app/controllers, on liste les controllers dans les bon dossiers
+#
+# Par exemple, le controllers Blog_add_articleController, de la page "blog_add_article", se trouve
+# dans le module "sample_blog", lui même dans le dossier "simple_controllers"
+
+# Listes des controllers reparties dans les sous-dossiers, du dossier "simple_controllers"
+simple_controllers:
+    site:
+        - index
+
+# Listes des controllers ajax reparties dans les sous-dossiers du dossier "ajax_controllers"
+ajax_controllers:
+    site:
+        - site

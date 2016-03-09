@@ -1,0 +1,13 @@
+##
+# Configuration des templates twig
+#
+# Ce fichier de configuration de définir pour chaque template/layout, la liste des pages qui y sont associés
+##
+
+Site:
+    template: layout_site.twig
+    pages:
+        - index
+
+Default:
+	template: layout.twig

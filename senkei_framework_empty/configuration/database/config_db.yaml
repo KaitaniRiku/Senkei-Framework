@@ -1,0 +1,24 @@
+##
+# Paramètres de connection aux bases de données, en fonction de l'environnement de developpement
+##
+
+# Paramètres de connexion en environnement de DEV
+dev:
+    db_name: <db_name>
+    db_host: <db_host>
+    db_user: <db_user>
+    db_pass: <db_password>
+
+# Paramètres de connexion en environnement de TEST
+test:
+    db_name: <db_name>
+    db_host: <db_host>
+    db_user: <db_user>
+    db_pass: <db_password>
+
+# Paramètres de connexion en environnement de PROD
+prod:
+    db_name: <db_name>
+    db_host: <db_host>
+    db_user: <db_user>
+    db_pass: <db_password>
