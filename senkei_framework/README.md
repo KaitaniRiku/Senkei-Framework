@@ -293,7 +293,7 @@ core/system_services/
 Dossier contenant les class déclenchées depuis System(), et permettant d'ajouter des mécanisme à l'architecture:
 - Mécanismes dynamiques de gestion d'espaces utilisateur et d'administration (connexion, protection, redirection, deconnexion)
 - Mécanisme de définition de l'environnement de développement en cours
-- Mécanisme de gestion de dépendance de fichier CSS, jS, LESS, Bootstrap, Knacss pour chaque page
+- Mécanisme de gestion de dépendance de fichiers CSS, jS, LESS, Bootstrap, Knacss pour chaque page
 - Mécanisme de fichiers de langues (internationalisation)
 - Mécanisme de moteur de template avec TWIG
 
@@ -369,23 +369,3 @@ Dossier public
 
 
 =======
-
-***
-
-# How to use
-
-N-B: Le mécanisme d'affichage de page, au sein de ce framework, dépends d'un paramètre $_GET['p'] dans l'url dont la valeur détermine la page à chager. La page par défault est la page 'index'.
-
-
-=======
-
-
-### Step 1: Afficher une vue
-
-#### 1 - Le controller
-
-```sh
-app/controllers/
-```
-
-- Créer un controller, et y appliquer la convention de nommage suivante suivante: `pagenameController.php`
