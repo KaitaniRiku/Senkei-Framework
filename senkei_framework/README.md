@@ -373,6 +373,7 @@ lang/<fr>
 
 
 ## Templates/
+***
 
 ```sh
 templates/mail_templates/<templates>
@@ -400,20 +401,72 @@ Dossier contenant différents templates HTML
 
 ## Views/
 
+#### 1 - Le dossier macros
+
 ```sh
-Dossier contenant les vues
+views/blocks/
 ```
 
-- `views/macros/` - Dossier contenant les macros twig, permettant de générer des morceaux de html
-- `views/pages/` - Dossier contenant les pages html/twig du site
-- `layout.twig` - layout par défault du site
-- `layout_admin.twig` - layout du back-office
-- `layout.twig` - layout de la page de connexion au back-office
-- `layout_landing.twig` - layout de la landing page
+Dossier contenant les macros TWIG, permettant de générer des morceaux de html dynamiquement
 
-    =======
+```
+|- views/
+|  |- macros/
+|  |  |- <bootstrapForm>
+|  |  |- <bootstrapNotif>
+|  |  |- <paginate>
+|  |
+|
+```
 
-### www/
+=======
+
+#### 2 - Le dossier pages
+
+```sh
+views/pages/
+```
+
+Dossier contenant les différentes pages de vue TWIG, rangés par modules (selon le même modèle que les fichiers controllers)
+
+```
+|- views/
+|  |- pages/
+|  |  |- dossier_module/
+|  |  |  |- <pages>
+|  |  |- dossier_module2/
+|  |  |  |- <pages>
+|  |  |
+|  |
+|
+```
+
+
+#### 3 - Fichiers de layout
+
+```sh
+views/<layout>
+```
+
+- `<layout.twig>` - Différents layouts/templates dans lesquels sont inclus les vues
+
+```
+|- views/
+|  |- <fichiers layout>
+|
+```
+
+
+
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+## www/
 
 ```sh
 Dossier public
