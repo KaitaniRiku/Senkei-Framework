@@ -3,6 +3,7 @@
 <br />
 
 ## App/
+***
 
 
 #### 1 - Le dossier controllers
@@ -105,6 +106,7 @@ Dossier contenant les composants/librairies venant de l'extérieur
 
 
 ## Configuration/
+***
 
 
 #### 1 - Le dossier admin
