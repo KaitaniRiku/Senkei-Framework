@@ -241,7 +241,7 @@ Dossier contenant les fichiers de configuration YAML permettant:
 
 
 ## Core/
-
+<br />
 
 #### 1 - Le dossier database
 
