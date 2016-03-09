@@ -1,6 +1,6 @@
 # Description des dossiers
 
-### App/
+## App/
 
 =======
 
@@ -103,7 +103,7 @@ Dossier contenant les composants/librairies venant de l'extérieur
 
 
 
-### Configuration/
+## Configuration/
 
 =======
 
@@ -240,7 +240,7 @@ Dossier contenant les fichiers de configuration YAML permettant:
 
 
 
-### Core/
+## Core/
 
 =======
 
@@ -339,7 +339,7 @@ core/<Configuration>
 
 
 
-### Lang/
+## Lang/
 
 =======
 
@@ -360,7 +360,7 @@ Dossier contenant les différents templates mail
 
 =======
 
-### Views/
+## Views/
 
 ```sh
 Dossier contenant les vues
