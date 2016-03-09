@@ -347,13 +347,29 @@ core/<Configuration>
 
 
 ```sh
-Dossier contenant les fichiers de lang, rangés par dossiers
+lang/<en>
+
+lang/<fr>
 ```
 
 - `lang/en/` - Dossier contenant le fichier des clés de langue US
 - `lang/fr/` - Dossier contenant le fichier des clés de langue FR
 
-    =======
+```
+|- lang/
+|  |- <en>
+|  |- <fr>
+|
+```
+
+
+
+<br />
+<br />
+<br />
+<br />
+
+
 
 ### Templates/
 
