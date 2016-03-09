@@ -321,7 +321,7 @@ core/<Configuration>
 ```
 
 - `core/Autoloader.php` - Class permettant le chargement de toutes les classes de l'application
-- `core/Configuration.php` - Class permettant de parser les fichier YAML de config
+- `core/Configuration.php` - Class permettant de parser les fichiers de configuration YAML
 
 
 ```
@@ -332,12 +332,8 @@ core/<Configuration>
 ```
 
 
+=======
 
-
-
-
-
-    =======
 
 ### Lang/
 
