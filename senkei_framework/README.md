@@ -404,7 +404,7 @@ Dossier contenant différents templates HTML
 #### 1 - Le dossier macros
 
 ```sh
-views/blocks/
+views/macros/
 ```
 
 Dossier contenant les macros TWIG, permettant de générer des morceaux de html dynamiquement
