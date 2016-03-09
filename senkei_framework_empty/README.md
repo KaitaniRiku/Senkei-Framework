@@ -11,21 +11,17 @@ senkei_framework/
   |- app/
   |  |- controllers/
   |  |  |- ajax_controllers/
-  |  |  |  |- dossier_module_ajax1/
-  |  |  |  |  |- <AjaxControllers>
+  |  |  |  |- site/
+  |  |  |  |  |- <AjaxSiteController>
   |  |  |  |  |
   |  |  |- simple_controllers/
-  |  |  |  |- dossier_module1/
-  |  |  |  |  |- <Controllers>
-  |  |  |  |  |
-  |  |  |  |- dossier_module2/
-  |  |  |  |  |- <Controllers>
+  |  |  |  |- site/
+  |  |  |  |  |- <indexController>
   |  |  |  |  |
   |  |  |- special_controllers/
-  |  |  |  |- <specialControllers>
+  |  |  |  |- <Error404Controller>
   |  |  |
   |  |- models/
-  |  |  |- <models de données>
   |  |  |
   |  |- services/
   |  |  |- <Hash>
@@ -104,12 +100,11 @@ senkei_framework/
   |  |  |- <paginate>
   |  |  |
   |  |- pages/
-  |  |  |- dossier_module/
-  |  |  |  |- <pages>
-  |  |  |- dossier_module2/
-  |  |  |  |- <pages>
+  |  |  |- site/
+  |  |  |  |- <index.twig>
   |  |  |
-  |  |- <fichiers layout>
+  |  |- <layout.twig>
+  |  |- <layout_site.twig>
   |
   |- www/
   |  |- ajax/
