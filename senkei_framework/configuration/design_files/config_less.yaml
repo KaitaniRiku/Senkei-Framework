@@ -12,7 +12,3 @@ use:
     use_less: true
     less_files_directory: 'www/assets/less/'
     css_files_directory: 'www/assets/css/'
-
-    # On indique les fichiers less qu'on ne veut pas compilé
-    exception:
-        - sample_blog_admin.less
