@@ -137,7 +137,7 @@ Dossier contenant le fichier de configuration YAML permettant de définir pour c
 configuration/database/
 ```
 
-Dossier contenant un fichier de configuration YAML permettan de définir les paramètres de connexions pour
+Dossier contenant un fichier de configuration YAML permettant de définir les paramètres de connexions pour
 différentes bases de données en fonction de l'environnement de dev en cours (dev, text ou prod)
 
 ```
@@ -219,7 +219,7 @@ configuration/twig/
 Dossier contenant les fichiers de configuration YAML permettant:
 - De définir le nommage des variables TWIG utilisée dans les vues
 - De définir l'emplacement du dossiers contenant les vues
-- De définir pour chaque template/layout; la liste des pages qui y sont associées
+- De définir pour chaque template/layout, la liste des pages qui y sont associées
 
 ```
 |- configuration/
@@ -332,10 +332,16 @@ core/<Configuration>
 ```
 
 
+
 =======
+=======
+***
+
 
 
 ### Lang/
+
+=======
 
 ```sh
 Dossier contenant les fichiers de lang, rangés par dossiers
