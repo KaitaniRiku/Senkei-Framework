@@ -290,7 +290,7 @@ Dossier contenant les class permettant d'enclencher l'ensembles des mécanismes 
 core/system_services/
 ```
 
-Dossier contenant les class déclenchées depuis la System(), et permettant d'ajouter des mécanisme à l'architecture:
+Dossier contenant les class déclenchées depuis System(), et permettant d'ajouter des mécanisme à l'architecture:
 - Mécanismes dynamiques de gestion d'espaces utilisateur et d'administration (connexion, protection, redirection, deconnexion)
 - Mécanisme de définition de l'environnement de développement en cours
 - Mécanisme de gestion de dépendance de fichier CSS, jS, LESS, Bootstrap, Knacss pour chaque page
