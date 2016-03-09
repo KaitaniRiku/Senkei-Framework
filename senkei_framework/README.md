@@ -102,6 +102,7 @@ Dossier contenant les composants/librairies venant de l'extérieur
 <br />
 <br />
 <br />
+<br />
 
 
 
@@ -235,7 +236,8 @@ Dossier contenant les fichiers de configuration YAML permettant:
 
 
 
-=======
+<br />
+<br />
 <br />
 <br />
 
@@ -334,7 +336,8 @@ core/<Configuration>
 
 
 
-=======
+<br />
+<br />
 <br />
 <br />
 
