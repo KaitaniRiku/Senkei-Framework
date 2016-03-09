@@ -400,6 +400,7 @@ Dossier contenant différents templates HTML
 
 
 ## Views/
+***
 
 #### 1 - Le dossier macros
 
@@ -469,18 +470,50 @@ views/<layout>
 
 
 ## www/
+***
+
+#### 1 - Le dossier ajax
 
 ```sh
-Dossier public
+www/ajax/
 ```
 
-- `www/ajax/` - Dossier contenant l'index AJAX
-- `www/assets/`
-  - `www/assets/bootstrap`
-  - `www/assets/css`
-  - `www/assets/js`
-  - `www/assets/less`
-  - `www/assets/pictures`
+Dossier contenant le fichier `www/ajax/ajax.php` faisant office d'index AJAX de l'architecture,
+soit la page de destination de toutes les requête AJAX
 
+```
+|- www/
+|  |- ajax/
+|  |  |- <index ajax>
+|  |
+|
+```
 
+=======
+
+#### 2 - Le dossier assets
+
+```sh
+www/assets/
+```
+
+Dossier contenant les dossiers suivant:
+- `www/assets/bootstrap/`
+- `www/assets/css/`
+- `www/assets/js/`
+- `www/assets/less/`
+- `www/assets/pictures/`
+
+```
+|- www/
+|  |- assets/
+|  |  |- bootstrap/
+|  |  |- css/
+|  |  |- fonts/
+|  |  |- js/
+|  |  |- less/
+|  |  |- pictures/
+|  |
+|
+```
 =======
