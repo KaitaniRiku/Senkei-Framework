@@ -2,7 +2,6 @@
 
 ## App/
 
-=======
 
 #### 1 - Le dossier controllers
 
@@ -105,7 +104,6 @@ Dossier contenant les composants/librairies venant de l'extérieur
 
 ## Configuration/
 
-=======
 
 #### 1 - Le dossier admin
 
@@ -242,7 +240,6 @@ Dossier contenant les fichiers de configuration YAML permettant:
 
 ## Core/
 
-=======
 
 #### 1 - Le dossier database
 
@@ -341,7 +338,6 @@ core/<Configuration>
 
 ## Lang/
 
-=======
 
 ```sh
 Dossier contenant les fichiers de lang, rangés par dossiers
