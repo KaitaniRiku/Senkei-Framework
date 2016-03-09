@@ -344,6 +344,7 @@ core/<Configuration>
 
 
 ## Lang/
+***
 
 
 ```sh
@@ -371,13 +372,31 @@ lang/<fr>
 
 
 
-### Templates/
+## Templates/
 
 ```sh
-Dossier contenant les différents templates mail
+templates/mail_templates/<templates>
 ```
 
-=======
+Dossier contenant différents templates HTML
+
+```
+|- templates/
+|  |- mail_tempaltes/
+|  |  |- <templates>
+|  |
+|
+```
+
+
+
+<br />
+<br />
+<br />
+<br />
+
+
+
 
 ## Views/
 
