@@ -203,9 +203,11 @@ class RoutageSystem extends ControllersProviderSystem
     {
         $module = self::DEFAULT_MODULE;
 
-        foreach ($this->routesConfiguration[$controllerType] as $key => $value) {
-            if(in_array($page, $value)){
-                $module = $key;
+        if(is_array($this->routesConfiguration[$controllerType])){
+            foreach ($this->routesConfiguration[$controllerType] as $key => $value) {
+                if(in_array($page, $value)){
+                    $module = $key;
+                }
             }
         }
 
