@@ -176,12 +176,17 @@ class FilesDependancySystem
 
             $less = $less = new \lessc;
             $lessFolderFileList = scandir('www/assets/less/');
+
             foreach ($lessFolderFileList as $key => $lessFile) {
-                if($lessFile != '.' && $lessFile != '..' && !in_array($lessFile, $this->lessConfiguration['use']['exception'])){
+                if(strtolower(substr(strrchr($lessFile, '.'), 1)) === "less"){
                     $filename = strtolower(substr(strstr($lessFile, '.', true), 0));
                     $lessFileLocation = $this->lessConfiguration['use']['less_files_directory'] . $filename . '.less';
                     $cssFileDestination = $this->lessConfiguration['use']['css_files_directory'] . $filename . '.css';
-                    $less->compileFile($lessFileLocation, $cssFileDestination);
+                    try {
+                        $less->compileFile($lessFileLocation, $cssFileDestination);
+                    } catch (\Exception $e) {
+                        die($e->getMessage());
+                    }
                 }
             }
         }

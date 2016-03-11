@@ -19,5 +19,5 @@ files:
 
     # On liste les fichiers CSS que l'on souhaite appliquer à une page spécifique
     # Pour cela on écrit le nom de la page, puis on liste les fichiers CSS à charger
-    blog_add_article:
+    index:
         - index.css
