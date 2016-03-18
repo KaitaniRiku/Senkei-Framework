@@ -16,7 +16,6 @@ files:
     all:
         - main.js
         - debug_modal.js
-        - jquery.easing.1.3.js
 
     # On liste les fichiers js que l'on souhaite appliquer à une page spécifique
     # Pour cela on écrit le nom de la page, puis on liste les fichiers js à charger

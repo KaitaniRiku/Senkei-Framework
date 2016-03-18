@@ -16,7 +16,6 @@ files:
     all:
         - main.js
         - debug_modal.js
-        - jquery.easing.1.3.js
         - validator.js
         - upload.js
 
