@@ -22,3 +22,7 @@ files:
     # Pour cela on écrit le nom de la page, puis on liste les fichiers js à charger
     index:
         - index.js
+
+jquery_files:
+    - jquery-1.11.3.min.js
+    - jquery-ui.min.js

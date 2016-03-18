@@ -25,6 +25,7 @@ Vars:
         page_infos: page_infos
     #Variables fichier
     files:
+        jquery: jquery_files
         js: js_files
         css: stylesheet
         less: less_files

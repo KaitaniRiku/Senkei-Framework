@@ -30,3 +30,7 @@ files:
 
     blog_gestion_articles:
         - admin.js
+
+jquery_files:
+    - jquery-1.11.3.min.js
+    - jquery-ui.min.js

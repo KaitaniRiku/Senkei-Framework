@@ -147,6 +147,10 @@ class FilesDependancySystem
                 'render' => $this->renderStylesheetFiles($current_page),
                 'use_link' => $this->stylesheetConfiguration['use']['link_files'],
             ),
+            'jquery' => array(
+                'render' => $this->renderJqueryFiles(),
+                'use_link' =>$this->jsFileConfiguration['use']['link_files'],
+            ),
             'js' => array(
                 'render' => $this->renderJsFiles($current_page),
                 'use_link' =>$this->jsFileConfiguration['use']['link_files'],
@@ -176,6 +180,7 @@ class FilesDependancySystem
 
             $less = $less = new \lessc;
             $lessFolderFileList = scandir('www/assets/less/');
+
             foreach ($lessFolderFileList as $key => $lessFile) {
                 if(strtolower(substr(strrchr($lessFile, '.'), 1)) === "less"){
                     $filename = strtolower(substr(strstr($lessFile, '.', true), 0));
@@ -308,6 +313,25 @@ class FilesDependancySystem
         $JsFilesForPage = isset($this->jsFileConfiguration['files'][$currentPage]) && !empty($this->jsFileConfiguration['files'][$currentPage]) ? $this->jsFileConfiguration['files'][$currentPage] : array();
 
         return array_merge($JsFilesForAll, $JsFilesForPage);
+    }
+
+
+    /**
+     * Méthode appelée par renderFilesForLoading()
+     *
+     * La method renderJqueryFiles() permet:
+     *
+     * De lire le fichier de configuration config_jsfile.yaml,
+     * Et de retourner les fichiers jquery à charger
+     *
+     *
+     * @return array   Tableau des fichiers JS à charger pour la page courante
+     */
+    private function renderJqueryFiles()
+    {
+        $jqueryFiles = isset($this->jsFileConfiguration['jquery_files']) && !empty($this->jsFileConfiguration['jquery_files']) ? $this->jsFileConfiguration['jquery_files'] : array();
+
+        return $jqueryFiles;
     }
 
 

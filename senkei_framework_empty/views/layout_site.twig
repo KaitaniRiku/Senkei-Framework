@@ -62,7 +62,10 @@
         </footer>
 
 
-        <script type="text/javascript" src="www/assets/js/jquery-1.11.3.min.js"></script>
+        <!-- Chargement des fichiers Jquery (défini dans la config) -->
+        {% for key, value in jquery_files %}
+        <script type="text/javascript" src="www/assets/js/{{ value }}"></script>
+        {% endfor %}
         <!-- Chargement des fichiers JS de la page courante (défini dans la config) -->
         {% for key, value in js_files %}
         <script type="text/javascript" src="www/assets/js/{{ value }}"></script>

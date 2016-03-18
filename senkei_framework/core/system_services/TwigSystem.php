@@ -273,6 +273,7 @@ class TwigSystem
             $this->twigConfiguration['Vars']['controller']['project_var'] => self::$variablesToView,
             $this->twigConfiguration['Vars']['controller']['page_infos'] => self::$pageInfos,
             $this->twigConfiguration['Vars']['controller']['current_view'] => $this->twigConfiguration['Core']['views_location'] . self::$pageView,
+            $this->twigConfiguration['Vars']['files']['jquery'] => self::$filesToLoad['jquery']['use_link'] ? self::$filesToLoad['jquery']['render'] : array(),
             $this->twigConfiguration['Vars']['files']['js'] => self::$filesToLoad['js']['use_link'] ? self::$filesToLoad['js']['render'] : array(),
             $this->twigConfiguration['Vars']['files']['css'] => self::$filesToLoad['css']['use_link'] ? self::$filesToLoad['css']['render'] : array(),
             $this->twigConfiguration['Vars']['files']['bootstrap_files'] => self::$filesToLoad['bootstrap'],
@@ -294,6 +295,7 @@ class TwigSystem
             );
             $arrayRender['debug_loaded_files'] = array_merge(
                 array('css' => self::$filesToLoad['css']['use_link'] ? self::$filesToLoad['css']['render'] : array()),
+                array('jquery' => self::$filesToLoad['jquery']['use_link'] ? self::$filesToLoad['jquery']['render'] : array()),
                 array('js' => self::$filesToLoad['js']['use_link'] ? self::$filesToLoad['js']['render'] : array()),
                 array('bootstrap' => self::$filesToLoad['bootstrap']['use'] ? self::$filesToLoad['bootstrap']['files'] : array()),
                 array('knacss' => self::$filesToLoad['knacss']['use'] ? self::$filesToLoad['knacss']['files'] : array())
